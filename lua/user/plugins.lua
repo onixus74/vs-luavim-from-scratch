@@ -118,12 +118,12 @@ return packer.startup(function(use)
         })
     end
   }
- 
+
   -- Easymotion
   use "easymotion/vim-easymotion"
 
   -- Smooth Scroll
-  use {'karb94/neoscroll.nvim', 
+  use {'karb94/neoscroll.nvim',
     config = function ()
       require('neoscroll').setup({
         mappings = {'<C-u>', '<C-d>'},
