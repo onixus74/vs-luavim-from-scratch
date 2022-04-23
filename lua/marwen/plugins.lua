@@ -76,6 +76,12 @@ packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  -- Comments
+  use "numToStr/Comment.nvim"
+
+  -- Autopairs
+  use "windwp/nvim-autopairs" 
+
   -- autocomplete and snippets
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-nvim-lsp")

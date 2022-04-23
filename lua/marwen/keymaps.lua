@@ -65,6 +65,10 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- Splits
+keymap("n", "<leader>v", ":vsplit<CR>", opts)
+keymap("n", "<leader>h", ":split<CR>", opts)
+
 -- NvimTree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 

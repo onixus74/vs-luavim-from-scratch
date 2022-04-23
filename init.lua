@@ -7,7 +7,7 @@
 -- require "user.lsp"
 -- require "user.telescope"
 -- require "user.treesitter"
--- require "user.autopairs"
+require "user.autopairs"
 -- require "user.comment"
 -- require "user.nvim-tree"
 require "user.gitsigns"
@@ -22,8 +22,8 @@ require "user.lualine"
 -- require "user.autocommands"
 
 -- MARWEN
-require "marwen.options"
 require "marwen.plugins"
+require "marwen.options"
 require "marwen.nvim-tree"
 require "marwen.colorscheme"
 require "marwen.keymaps"
