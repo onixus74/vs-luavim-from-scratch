@@ -60,8 +60,9 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  use "drewtempelmeyer/palenight.vim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -93,6 +94,43 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  -- Tmux
+  use {
+    "aserowy/tmux.nvim",
+    config = function()
+        require("tmux").setup({
+            -- overwrite default configuration
+            -- here, e.g. to enable default bindings
+            copy_sync = {
+                -- enables copy sync and overwrites all register actions to
+                -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
+                enable = true,
+            },
+            navigation = {
+                -- enables default keybindings (C-hjkl) for normal mode
+                enable_default_keybindings = true,
+            },
+            resize = {
+                -- enables default keybindings (A-hjkl) for normal mode
+                enable_default_keybindings = true,
+            }
+        })
+    end
+  }
+ 
+  -- Easymotion
+  use "easymotion/vim-easymotion"
+
+  -- Smooth Scroll
+  use {'karb94/neoscroll.nvim', 
+    config = function ()
+      require('neoscroll').setup({
+        mappings = {'<C-u>', '<C-d>'},
+        easing_function = 'sine',
+      })
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

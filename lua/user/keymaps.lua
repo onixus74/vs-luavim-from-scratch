@@ -32,8 +32,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-k>", ":bnext<CR>", opts)
+keymap("n", "<S-j>", ":bprevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -41,6 +41,8 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
 -- Press jk fast to enter
+keymap("i", "jj", "<ESC>", opts)
+keymap("i", "kk", "<ESC>", opts)
 keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
