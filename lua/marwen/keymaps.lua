@@ -26,7 +26,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Close buffer
-keymap("n", "<C-w>", ":bdelete!<CR>", opts)
+keymap("n", "<C-w>", ":Bdelete!<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

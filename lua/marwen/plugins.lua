@@ -49,6 +49,9 @@ packer.startup(function(use)
   -- NvimTree
   use "kyazdani42/nvim-tree.lua"
 
+  -- Icons
+  use "kyazdani42/nvim-web-devicons"
+
   -- StatusLine
   use "nvim-lualine/lualine.nvim"
   use "akinsho/bufferline.nvim"
@@ -70,17 +73,32 @@ packer.startup(function(use)
   -- Smoothscroll
   use "karb94/neoscroll.nvim"
 
-  -- LSP
-  use "neovim/nvim-lspconfig"
-
   -- Git
   use "lewis6991/gitsigns.nvim"
 
   -- Comments
   use "numToStr/Comment.nvim"
 
+  -- Indentation line
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- Autopairs
   use "windwp/nvim-autopairs" 
+
+  -- Close buffers without closing pane
+  use "moll/vim-bbye"
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- autocomplete and snippets
   use("hrsh7th/nvim-cmp")
