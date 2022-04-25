@@ -102,6 +102,9 @@ packer.startup(function(use)
   -- Debugging
   use 'mfussenegger/nvim-dap'
 
+  -- Formatting
+  -- use "lukas-reineke/lsp-format.nvim"
+
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
@@ -110,7 +113,7 @@ packer.startup(function(use)
 
   -- Snippy Snippets
   use "dcampos/nvim-snippy" --snippet engine
-  use "dcampos/cmp-snippy"-- Snippy snippet completions
+  use "dcampos/cmp-snippy" -- Snippy snippet completions
   use "honza/vim-snippets" -- a bunch of snippets to use
 
   -- Autocomplete

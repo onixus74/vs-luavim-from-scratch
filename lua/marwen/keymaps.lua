@@ -78,34 +78,50 @@ keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
 -- Source nvim config
 keymap("n", "<leader>so", ":so %<CR>", opts)
 
+-- Git
+---- LazyGit
+keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
+
+---- ResetHunk
+keymap("n", "<leader>hu", ":G reset_hunk<CR>", opts)
+
+---- PreviewHunk
+keymap("n", "<leader>hp", ":G preview_hunk<CR>", opts)
+
+---- NextHunk
+keymap("n", "]g", ":G next_hunk<CR>", opts)
+
+---- PreviousHunk
+keymap("n", "[g", ":G prev_hunk<CR>", opts)
+
 -- Telescope
--- Buffers
+---- Buffers
 keymap("n", "<leader>bb", ":Telescope buffers<CR>", opts)
 
--- GitFiles
+---- GitFiles
 keymap("n", "<C-p>", ":Telescope git_files<CR>", opts)
 
--- GitStatus
+---- GitStatus
 keymap("n", "<C-g>", ":Telescope git_status<CR>", opts)
 
--- Files
+---- Files
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 
--- Current buffer lines
+---- Current buffer lines
 keymap("n", "<leader>ll", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 
--- Current directory lines
+---- Current directory lines
 keymap("n", "<leader>LL", ":Telescope live_grep<CR>", opts)
 
--- String Grep
+---- String Grep
 keymap("n", "<leader>ss", ":Telescope grep_string<CR>", opts)
 
--- Git commits
+---- Git commits
 keymap("n", "<leader>gc", ":Telescope git_commits<CR>", opts)
 
--- Git branches
+---- Git branches
 keymap("n", "<leader>gb", ":Telescope git_branches<CR>", opts)
 
 -- Debugging
--- Toggle Breakpoint
+---- Toggle Breakpoint
 keymap("n", "<leader>bp", ":DapToggleBreakpoint()<CR>", opts)
