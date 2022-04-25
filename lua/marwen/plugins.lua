@@ -45,7 +45,6 @@ packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-
   -- NvimTree
   use "kyazdani42/nvim-tree.lua"
 
@@ -67,6 +66,9 @@ packer.startup(function(use)
   -- TMUX
   use "aserowy/tmux.nvim"
 
+  -- LazyGit
+  use "kdheepak/lazygit.nvim"
+
   -- Easymotion
   use "easymotion/vim-easymotion"
 
@@ -83,7 +85,7 @@ packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
 
   -- Autopairs
-  use "windwp/nvim-autopairs" 
+  use "windwp/nvim-autopairs"
 
   -- Close buffers without closing pane
   use "moll/vim-bbye"
@@ -100,11 +102,16 @@ packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-  -- autocomplete and snippets
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-vsnip")
-  use("hrsh7th/vim-vsnip")
+  -- Snippy Snippets
+  use "dcampos/nvim-snippy" --snippet engine
+  use "honza/vim-snippets" -- a bunch of snippets to use
 
-  use("onsails/lspkind-nvim")
+  -- Autocomplete
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-nvim-lsp" -- LSP snippet completions
+  use "dcampos/cmp-snippy"-- Snippy snippet completions
+
 end)

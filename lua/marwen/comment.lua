@@ -4,15 +4,15 @@ if not status_ok then
 end
 ---Includes `<leader>cc`, `<leader>cb`, `<leader>c[count]{motion}` and `gb[count]{motion}`
 comment.setup {
-  mappings = {
-    basic = true,
-  },
+  -- mappings = {
+  --   basic = true,
+  -- },
   toggler = {
     ---Line-comment toggle keymap
     line = '<leader>cc',
     ---Block-comment toggle keymap
     block = '<leader>cb',
-  }, 
+  },
   opleader = {
     ---Line-comment keymap
     -- line = '<leader>c',

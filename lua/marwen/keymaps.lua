@@ -72,6 +72,9 @@ keymap("n", "<leader>h", ":split<CR>", opts)
 -- NvimTree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
+-- LazyGit
+keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
+
 -- Source nvim config
 keymap("n", "<leader>so", ":so %<CR>", opts)
 
