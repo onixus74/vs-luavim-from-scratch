@@ -78,6 +78,9 @@ packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  -- Wakatime
+  use 'wakatime/vim-wakatime'
+
   -- Comments
   use "numToStr/Comment.nvim"
 
