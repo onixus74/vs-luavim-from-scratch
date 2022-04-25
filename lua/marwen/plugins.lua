@@ -96,6 +96,12 @@ packer.startup(function(use)
     run = ":TSUpdate",
   }
 
+  -- Flutter Tools
+  -- use "akinsho/flutter-tools.nvim"
+
+  -- Debugging
+  use 'mfussenegger/nvim-dap'
+
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
@@ -104,6 +110,7 @@ packer.startup(function(use)
 
   -- Snippy Snippets
   use "dcampos/nvim-snippy" --snippet engine
+  use "dcampos/cmp-snippy"-- Snippy snippet completions
   use "honza/vim-snippets" -- a bunch of snippets to use
 
   -- Autocomplete
@@ -112,6 +119,6 @@ packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP snippet completions
-  use "dcampos/cmp-snippy"-- Snippy snippet completions
+  use "hrsh7th/cmp-nvim-lsp-signature-help" -- LSP signature help completions
 
 end)

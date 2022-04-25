@@ -105,3 +105,7 @@ keymap("n", "<leader>gc", ":Telescope git_commits<CR>", opts)
 
 -- Git branches
 keymap("n", "<leader>gb", ":Telescope git_branches<CR>", opts)
+
+-- Debugging
+-- Toggle Breakpoint
+keymap("n", "<leader>bp", ":DapToggleBreakpoint()<CR>", opts)

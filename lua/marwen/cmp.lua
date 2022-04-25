@@ -67,6 +67,7 @@ cmp.setup {
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         snippy = "[Snippet]",
+        nvim_lsp_signature_help = "[Signature]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -75,6 +76,7 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = 'nvim_lsp_signature_help' },
     { name = "snippy" },
     { name = "buffer" },
     { name = "path" },
