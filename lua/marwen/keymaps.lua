@@ -35,8 +35,16 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-k>", ":bnext<CR>", opts)
-keymap("n", "<S-j>", ":bprevious<CR>", opts)
+keymap("n", "<S-k>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-j>", ":BufferLineCyclePrev<CR>", opts)
+
+---- OLD CONFIG without BUFFERLINE
+---- keymap("n", "<S-k>", ":bnext<CR>", opts)
+---- keymap("n", "<S-j>", ":bprevious<CR>", opts)
+
+-- Move buffers
+keymap("n", "<leader>..", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<leader>,,", ":BufferLineMovePrev<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -83,16 +91,16 @@ keymap("n", "<leader>so", ":so %<CR>", opts)
 keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
 
 ---- ResetHunk
-keymap("n", "<leader>hu", ":G reset_hunk<CR>", opts)
+keymap("n", "<leader>hu", ":Gitsigns reset_hunk<CR>", opts)
 
 ---- PreviewHunk
-keymap("n", "<leader>hp", ":G preview_hunk<CR>", opts)
+keymap("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", opts)
 
 ---- NextHunk
-keymap("n", "]g", ":G next_hunk<CR>", opts)
+keymap("n", "]g", ":Gitsigns next_hunk<CR>", opts)
 
 ---- PreviousHunk
-keymap("n", "[g", ":G prev_hunk<CR>", opts)
+keymap("n", "[g", ":Gitsigns prev_hunk<CR>", opts)
 
 -- Telescope
 ---- Buffers

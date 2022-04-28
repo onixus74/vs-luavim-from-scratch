@@ -61,7 +61,12 @@ packer.startup(function(use)
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  use "drewtempelmeyer/palenight.vim"
+  -- use "projekt0n/github-nvim-theme"
+  -- use "drewtempelmeyer/palenight.vim"
+  use "Cybolic/palenight.vim"
+
+  -- Colorizer
+  use "norcalli/nvim-colorizer.lua"
 
   -- TMUX
   use "aserowy/tmux.nvim"
@@ -76,7 +81,14 @@ packer.startup(function(use)
   use "karb94/neoscroll.nvim"
 
   -- Git
+  use 'tpope/vim-fugitive'
   use "lewis6991/gitsigns.nvim"
+
+  -- Github reviews
+  use "pwntester/octo.nvim"
+
+  -- Shade
+  use 'sunjon/shade.nvim'
 
   -- Wakatime
   use 'wakatime/vim-wakatime'
@@ -99,6 +111,9 @@ packer.startup(function(use)
     run = ":TSUpdate",
   }
 
+  -- Bookmarks
+  use "MattesGroeger/vim-bookmarks"
+
   -- Flutter Tools
   -- use "akinsho/flutter-tools.nvim"
 
@@ -106,7 +121,7 @@ packer.startup(function(use)
   use 'mfussenegger/nvim-dap'
 
   -- Formatting
-  -- use "lukas-reineke/lsp-format.nvim"
+  -- use "lukas-reineke/lsp-format.nvim" -- NOT USED
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
