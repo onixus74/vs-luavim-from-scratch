@@ -10,9 +10,9 @@ vim.cmd [[
 ]]
 
 -- Shade
-require "shade".setup({
-  overlay_opacity = 70,
-})
+-- require "shade".setup({
+--   overlay_opacity = 70,
+-- })
 
 -- Colorizer
 require 'colorizer'.setup()

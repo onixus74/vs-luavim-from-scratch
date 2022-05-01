@@ -88,7 +88,7 @@ packer.startup(function(use)
   use "pwntester/octo.nvim"
 
   -- Shade
-  use 'sunjon/shade.nvim'
+  -- use 'sunjon/shade.nvim'
 
   -- Wakatime
   use 'wakatime/vim-wakatime'
@@ -113,6 +113,9 @@ packer.startup(function(use)
 
   -- Bookmarks
   use "MattesGroeger/vim-bookmarks"
+
+  -- Multi cursor
+  -- use "mg979/vim-visual-multi"
 
   -- Flutter Tools
   -- use "akinsho/flutter-tools.nvim"
