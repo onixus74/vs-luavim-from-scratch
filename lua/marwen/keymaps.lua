@@ -119,10 +119,10 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ll", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 
 ---- Current directory lines
-keymap("n", "<leader>LL", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>ss", ":Telescope live_grep<CR>", opts)
 
 ---- String Grep
-keymap("n", "<leader>ss", ":Telescope grep_string<CR>", opts)
+keymap("n", "<leader>LL", ":Telescope grep_string<CR>", opts)
 
 ---- Git commits
 keymap("n", "<leader>gc", ":Telescope git_commits<CR>", opts)

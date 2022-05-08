@@ -57,6 +57,7 @@ packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -118,7 +119,7 @@ packer.startup(function(use)
   -- use "mg979/vim-visual-multi"
 
   -- Flutter Tools
-  -- use "akinsho/flutter-tools.nvim"
+  use "akinsho/flutter-tools.nvim"
 
   -- Debugging
   use 'mfussenegger/nvim-dap'
