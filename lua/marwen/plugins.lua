@@ -57,7 +57,7 @@ packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -134,8 +134,13 @@ packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Snippy Snippets
-  use "dcampos/nvim-snippy" --snippet engine
-  use "dcampos/cmp-snippy" -- Snippy snippet completions
+  -- use "dcampos/nvim-snippy" --snippet engine
+  -- use "dcampos/cmp-snippy" -- Snippy snippet completions
+  -- use "honza/vim-snippets" -- a bunch of snippets to use
+
+  -- Ultisnips Snippets
+  use "quangnguyen30192/cmp-nvim-ultisnips"
+  use "SirVer/ultisnips"
   use "honza/vim-snippets" -- a bunch of snippets to use
 
   -- Autocomplete
@@ -145,6 +150,6 @@ packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP snippet completions
   -- use "hrsh7th/cmp-nvim-lsp-signature-help" -- LSP signature help completions
-  -- use "ray-x/cmp-treesitter" -- Treesitter completions
+  use "ray-x/cmp-treesitter" -- Treesitter completions
 
 end)

@@ -50,21 +50,29 @@ keymap("n", "<leader>,,", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jj", "<ESC>", opts)
 keymap("i", "kk", "<ESC>", opts)
 keymap("i", "jk", "<ESC>", opts)
 
+
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+
+
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
+
+
 
 -- Visual Block --
 -- Move text up and down
@@ -73,18 +81,28 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+
+
 -- Splits
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
 keymap("n", "<leader>h", ":split<CR>", opts)
 
+
+
 -- NvimTree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+
+
 
 -- LazyGit
 keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
 
+
+
 -- Source nvim config
 keymap("n", "<leader>so", ":so %<CR>", opts)
+
+
 
 -- Git
 ---- LazyGit
@@ -102,18 +120,20 @@ keymap("n", "]g", ":Gitsigns next_hunk<CR>", opts)
 ---- PreviousHunk
 keymap("n", "[g", ":Gitsigns prev_hunk<CR>", opts)
 
+
+
 -- Telescope
 ---- Buffers
 keymap("n", "<leader>bb", ":Telescope buffers<CR>", opts)
 
----- GitFiles
-keymap("n", "<C-p>", ":Telescope git_files<CR>", opts)
+---- ProjectFiles
+-- keymap("n", "<C-p>", ":Telescope project_files<CR>", opts)
+
+---- Files (Handled with project_files fun)
+keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
 
 ---- GitStatus
 keymap("n", "<C-g>", ":Telescope git_status<CR>", opts)
-
----- Files
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 
 ---- Current buffer lines
 keymap("n", "<leader>ll", ":Telescope current_buffer_fuzzy_find<CR>", opts)
@@ -130,6 +150,29 @@ keymap("n", "<leader>gc", ":Telescope git_commits<CR>", opts)
 ---- Git branches
 keymap("n", "<leader>gb", ":Telescope git_branches<CR>", opts)
 
+---- Flutter commands
+keymap("n", "<leader>fc", ":Telescope flutter commands<CR>", opts)
+
+
+
 -- Debugging
 ---- Toggle Breakpoint
 keymap("n", "<leader>bp", ":DapToggleBreakpoint()<CR>", opts)
+
+
+
+-- Octo
+---- pr list
+keymap("n", "<leader>pl", ":Octo pr list<CR>", opts)
+
+---- review start
+keymap("n", "<leader>pr", ":Octo review start<CR>", opts)
+
+---- review resume
+keymap("n", "<leader>prr", ":Octo review resume<CR>", opts)
+
+---- review discard
+keymap("n", "<leader>pd", ":Octo review discard<CR>", opts)
+
+---- review submit
+keymap("n", "<leader>ps", ":Octo review submit<CR>", opts)

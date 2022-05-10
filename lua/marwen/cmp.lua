@@ -3,7 +3,12 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, snippy = pcall(require, "snippy")
+-- local snip_status_ok, snippy = pcall(require, "snippy")
+-- if not snip_status_ok then
+--   return
+-- end
+
+local snip_status_ok, ultisnips = pcall(require, "cmp_nvim_ultisnips")
 if not snip_status_ok then
   return
 end
@@ -37,15 +42,30 @@ local kind_icons = {
   TypeParameter = "",
 }
 
+-- snippy.setup({
+--   mappings = {
+--     is = {
+--       ['<CR>'] = 'expand_or_advance',
+--       ['<S-CR>'] = 'previous',
+--     },
+--     nx = {
+--       ['<C-c>'] = 'cut_text',
+--     },
+--   },
+-- })
+
+ultisnips.setup {}
+
 cmp.setup {
   snippet = {
     expand = function(args)
-      snippy.expand_snippet(args.body) -- For `snippy` users.
+      -- snippy.expand_snippet(args.body) -- For `snippy` users.
+      vim.fn["UltiSnips#Anon"](args.body) -- For `UltiSnips` users.
     end,
   },
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -56,7 +76,24 @@ cmp.setup {
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
+
     ["<Tab>"] = cmp.mapping.confirm { select = true },
+
+    -- Ultisnips
+    ["<CR>"] = cmp.mapping(
+      function(fallback)
+        -- ultisnips.mappings.expand_or_jump_forwards(fallback)
+        require("cmp_nvim_ultisnips.mappings").expand_or_jump_forwards(fallback)
+      end,
+      { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+    ),
+    ["<S-CR>"] = cmp.mapping(
+      function(fallback)
+        -- ultisnips.mappings.jump_backwards(fallback)
+        require("cmp_nvim_ultisnips.mappings").jump_backwards(fallback)
+      end,
+      { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+    ),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -65,10 +102,11 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
+        ultisnips = "[UltiSnips]",
+        -- snippy = "[Snippy]",
         nvim_lsp = "[LSP]",
-        snippy = "[Snippet]",
         -- nvim_lsp_signature_help = "[Signature]",
-        -- treesitter = "[Treesitter]",
+        treesitter = "[Treesitter]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -76,12 +114,13 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "ultisnips" },
+    -- { name = "snippy" },
     { name = "nvim_lsp" },
     -- { name = "nvim_lsp_signature_help" },
-    -- { name = "treesitter" },
-    { name = "buffer" },
-    { name = "snippy" },
+    { name = "treesitter" },
     { name = "path" },
+    { name = "buffer" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -96,15 +135,3 @@ cmp.setup {
     native_menu = false,
   },
 }
-
-snippy.setup({
-    mappings = {
-        is = {
-            ['<CR>'] = 'expand_or_advance',
-            ['<S-CR>'] = 'previous',
-        },
-        nx = {
-            ['<C-c>'] = 'cut_text',
-        },
-    },
-})
