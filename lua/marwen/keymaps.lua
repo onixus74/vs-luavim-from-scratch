@@ -163,6 +163,9 @@ keymap("n", "<leader>bp", ":DapToggleBreakpoint()<CR>", opts)
 
 -- Octo
 ---- pr list
+keymap("n", "<leader>il", ":Octo issue list<CR>", opts)
+
+---- pr list
 keymap("n", "<leader>pl", ":Octo pr list<CR>", opts)
 
 ---- review start
@@ -176,3 +179,6 @@ keymap("n", "<leader>pd", ":Octo review discard<CR>", opts)
 
 ---- review submit
 keymap("n", "<leader>ps", ":Octo review submit<CR>", opts)
+
+---- review close
+keymap("n", "<leader>pc", ":Octo review close<CR>", opts)
