@@ -118,6 +118,9 @@ packer.startup(function(use)
   -- Multi cursor
   -- use "mg979/vim-visual-multi"
 
+  -- Elixir Tools
+  use 'Matsa59/potion-maker.nvim'
+
   -- Flutter Tools
   use "akinsho/flutter-tools.nvim"
 

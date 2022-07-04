@@ -8,7 +8,7 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
     -- Layout
-    -- sorting_strategy = "ascending",
+    sorting_strategy = "ascending",
 
     -- layout_strategy = 'bottom_pane',
     -- layout_strategy = 'horizontal',

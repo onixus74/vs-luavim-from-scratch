@@ -51,7 +51,6 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 
-
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jj", "<ESC>", opts)
@@ -182,3 +181,11 @@ keymap("n", "<leader>ps", ":Octo review submit<CR>", opts)
 
 ---- review close
 keymap("n", "<leader>pc", ":Octo review close<CR>", opts)
+
+
+-- Potion Maker
+keymap("n", "<leader>tt", ":PotionMakerToggleTestFile<CR>", opts)
+
+keymap("n", "<leader>ts", ":PotionMakerExecuteTestAtCursor<CR>", opts)
+
+keymap("n", "<leader>tS", ":PotionMakerExecuteTestForCurrentFile<CR>", opts)
