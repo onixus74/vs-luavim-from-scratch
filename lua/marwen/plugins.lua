@@ -60,11 +60,14 @@ packer.startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Colorschemes
-  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  -- use "lunarvim/darkplus.nvim"
   -- use "projekt0n/github-nvim-theme"
   -- use "drewtempelmeyer/palenight.vim"
-  use "Cybolic/palenight.vim"
+  -- use "Cybolic/palenight.vim"
+  -- use 'joshdick/onedark.vim'
+  use 'navarasu/onedark.nvim'
+  use 'olimorris/onedarkpro.nvim'
 
   -- Colorizer
   use "norcalli/nvim-colorizer.lua"
@@ -83,7 +86,10 @@ packer.startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
-  use "lewis6991/gitsigns.nvim"
+  use 'lewis6991/gitsigns.nvim'
+
+  -- TODO: add keymaps <06-07-22 > --
+  use 'sindrets/diffview.nvim'
 
   -- Github reviews
   use "pwntester/octo.nvim"
@@ -107,10 +113,13 @@ packer.startup(function(use)
   use "moll/vim-bbye"
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+  -- use {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   run = ":TSUpdate",
+  -- }
+
+  -- Polyglot (Instead of treesitter)
+  use 'sheerun/vim-polyglot'
 
   -- Bookmarks
   use "MattesGroeger/vim-bookmarks"
@@ -126,6 +135,7 @@ packer.startup(function(use)
 
   -- Debugging
   use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
 
   -- Formatting
   -- use "lukas-reineke/lsp-format.nvim" -- NOT USED
@@ -136,7 +146,7 @@ packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-  -- Snippy Snippets
+  -- Snippy Snippets (Not USED)
   -- use "dcampos/nvim-snippy" --snippet engine
   -- use "dcampos/cmp-snippy" -- Snippy snippet completions
   -- use "honza/vim-snippets" -- a bunch of snippets to use
@@ -154,5 +164,11 @@ packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp" -- LSP snippet completions
   -- use "hrsh7th/cmp-nvim-lsp-signature-help" -- LSP signature help completions
   use "ray-x/cmp-treesitter" -- Treesitter completions
+
+  -- Code Outline
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup() end
+  }
 
 end)

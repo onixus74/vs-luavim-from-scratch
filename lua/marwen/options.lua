@@ -31,7 +31,9 @@ local options = {
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
-  sidescrolloff = 8,
+  sidescrolloff = 8,                       
+  laststatus = 3,                          -- extend status line between splits
+  syntax = 'on',                           -- colorschema syntax
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 

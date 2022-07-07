@@ -58,7 +58,6 @@ keymap("i", "kk", "<ESC>", opts)
 keymap("i", "jk", "<ESC>", opts)
 
 
-
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -155,8 +154,20 @@ keymap("n", "<leader>fc", ":Telescope flutter commands<CR>", opts)
 
 
 -- Debugging
+---- Debugging session start / continue
+keymap("n", "<leader>dd", ":DapContinue<CR>", opts)
+
+---- Toggle Repl
+keymap("n", "<leader>dr", ":DapToggleRepl<CR>", opts)
+
 ---- Toggle Breakpoint
-keymap("n", "<leader>bp", ":DapToggleBreakpoint()<CR>", opts)
+keymap("n", "<leader>db", ":DapToggleBreakpoint<CR>", opts)
+
+---- Debugging session terminate
+keymap("n", "<leader>dt", ":DapTerminate<CR>", opts)
+
+---- Toggle Repl
+keymap("n", "<leader>du", ":lua require('dapui').toggle()<CR>", opts)
 
 
 
@@ -183,9 +194,15 @@ keymap("n", "<leader>ps", ":Octo review submit<CR>", opts)
 keymap("n", "<leader>pc", ":Octo review close<CR>", opts)
 
 
+
 -- Potion Maker
 keymap("n", "<leader>tt", ":PotionMakerToggleTestFile<CR>", opts)
 
 keymap("n", "<leader>ts", ":PotionMakerExecuteTestAtCursor<CR>", opts)
 
 keymap("n", "<leader>tS", ":PotionMakerExecuteTestForCurrentFile<CR>", opts)
+
+
+
+-- Code outline Aerial
+keymap("n", "<leader>oo", ":AerialToggle<CR>", opts)
