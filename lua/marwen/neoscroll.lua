@@ -4,6 +4,6 @@ if not status_ok then
 end
 
 neoscroll.setup {
-  mappings = {'<C-u>', '<C-d>'},
+  mappings = { '<C-u>', '<C-d>' },
   easing_function = 'sine',
 }

@@ -153,6 +153,11 @@ keymap("n", "<leader>fc", ":Telescope flutter commands<CR>", opts)
 
 
 
+-- Code outline Aerial
+keymap("n", "<leader>oo", ":AerialToggle<CR>", opts)
+
+
+
 -- Debugging
 ---- Debugging session start / continue
 keymap("n", "<leader>dd", ":DapContinue<CR>", opts)
@@ -204,5 +209,5 @@ keymap("n", "<leader>tS", ":PotionMakerExecuteTestForCurrentFile<CR>", opts)
 
 
 
--- Code outline Aerial
-keymap("n", "<leader>oo", ":AerialToggle<CR>", opts)
+-- Wakatime
+keymap("n", "<leader>ww", ":WakaTimeToday<CR>", opts)

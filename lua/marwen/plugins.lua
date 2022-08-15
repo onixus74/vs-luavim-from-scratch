@@ -53,7 +53,8 @@ packer.startup(function(use)
 
   -- StatusLine
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/bufferline.nvim"
+
+  use { 'akinsho/bufferline.nvim', tag = "v2.5.1", requires = 'kyazdani42/nvim-web-devicons' }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -112,14 +113,14 @@ packer.startup(function(use)
   -- Close buffers without closing pane
   use "moll/vim-bbye"
 
-  -- Treesitter
-  -- use {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   run = ":TSUpdate",
-  -- }
-
   -- Polyglot (Instead of treesitter)
   use 'sheerun/vim-polyglot'
+
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ":TSUpdate",
+  }
 
   -- Bookmarks
   use "MattesGroeger/vim-bookmarks"
@@ -168,7 +169,12 @@ packer.startup(function(use)
   -- Code Outline
   use {
     'stevearc/aerial.nvim',
-    config = function() require('aerial').setup() end
+
+    config = function() require('aerial').setup({
+        backends = { "lsp", "treesitter", "markdown" },
+        filter_kind = false
+      })
+    end
   }
 
 end)
