@@ -124,6 +124,9 @@ keymap("n", "[g", ":Gitsigns prev_hunk<CR>", opts)
 ---- Buffers
 keymap("n", "<leader>bb", ":Telescope buffers<CR>", opts)
 
+---- Treesitter
+keymap("n", "<leader>ff", ":Telescope treesitter<CR>", opts)
+
 ---- ProjectFiles
 -- keymap("n", "<C-p>", ":Telescope project_files<CR>", opts)
 

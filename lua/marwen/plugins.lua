@@ -135,6 +135,7 @@ packer.startup(function(use)
   use "akinsho/flutter-tools.nvim"
 
   -- Debugging
+  use 'nvim-telescope/telescope-dap.nvim'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
 
@@ -176,5 +177,11 @@ packer.startup(function(use)
       })
     end
   }
+
+  -- Dash
+  -- use({
+  --   'mrjones2014/dash.nvim',
+  --   run = 'make install',
+  -- })
 
 end)

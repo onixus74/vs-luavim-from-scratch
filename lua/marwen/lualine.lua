@@ -24,12 +24,12 @@ local diff = {
   cond = hide_in_width
 }
 
-local mode = {
-  "mode",
-  fmt = function(str)
-    return "-- " .. str .. " --"
-  end,
-}
+-- local mode = {
+--   "mode",
+--   fmt = function(str)
+--     return "-- " .. str .. " --"
+--   end,
+-- }
 
 local filetype = {
   "filetype",
@@ -46,6 +46,16 @@ local branch = {
 local location = {
   "location",
   padding = 0,
+}
+
+-- local buffers = {
+--   'buffers'
+-- }
+
+local filename = {
+  'filename',
+  path = 1,
+  shorting_target = 40,
 }
 
 -- cool function for progress
@@ -65,20 +75,21 @@ end
 lualine.setup({
   options = {
     icons_enabled = true,
-    -- theme = "auto",
-    theme = "ayu_mirage",
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
+    theme = "auto",
+    -- theme = "horizon",
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
     always_divide_middle = true,
   },
   sections = {
     lualine_a = { branch, diagnostics },
-    lualine_b = { mode },
-    lualine_c = {},
+    lualine_b = { 'mode' },
+    lualine_c = { filename },
     -- lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_x = { diff, spaces, "encoding", filetype },
     lualine_y = { location },
+    -- lualine_z = { progress },
     lualine_z = { progress },
   },
   inactive_sections = {
