@@ -38,6 +38,11 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-k>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-j>", ":BufferLineCyclePrev<CR>", opts)
 
+-- Navigate tabs
+keymap("n", "tnn", ":tabnew<CR>", opts)
+keymap("n", "tn", ":tabn<CR>", opts)
+keymap("n", "tp", ":tabp<CR>", opts)
+
 ---- OLD CONFIG without BUFFERLINE
 ---- keymap("n", "<S-k>", ":bnext<CR>", opts)
 ---- keymap("n", "<S-j>", ":bprevious<CR>", opts)
@@ -214,3 +219,7 @@ keymap("n", "<leader>tS", ":PotionMakerExecuteTestForCurrentFile<CR>", opts)
 
 -- Wakatime
 keymap("n", "<leader>ww", ":WakaTimeToday<CR>", opts)
+
+
+-- Knap (Preview)
+keymap("n", "<leader>pp", "lua require('knap').toggle_autopreviewing()", opts)

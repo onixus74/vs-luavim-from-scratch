@@ -125,6 +125,9 @@ packer.startup(function(use)
   -- Bookmarks
   use "MattesGroeger/vim-bookmarks"
 
+  -- Markdown preview
+  use "frabjous/knap"
+
   -- Multi cursor
   -- use "mg979/vim-visual-multi"
 
