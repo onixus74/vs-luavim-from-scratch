@@ -44,13 +44,17 @@ nvim_tree.setup {
     args = {},
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = {},
   },
   git = {
     enable = true,
     ignore = true,
     timeout = 500,
+  },
+  filesystem_watchers = {
+    enable = true,
+    debounce_delay = 50,
   },
   view = {
     width = 50,
@@ -73,7 +77,15 @@ nvim_tree.setup {
     require_confirm = true,
   },
   renderer = {
+    indent_width = 2,
     icons = {
+      webdev_colors = true,
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = false,
+        git = true,
+      },
       glyphs = {
         default = "",
         symlink = "",
@@ -94,6 +106,17 @@ nvim_tree.setup {
           symlink = "",
         },
       }
-    }
-  }
+    },
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+      icons = {
+        corner = "└",
+        edge = "│",
+        item = "│",
+        bottom = "─",
+        none = " ",
+      },
+    },
+  },
 }
