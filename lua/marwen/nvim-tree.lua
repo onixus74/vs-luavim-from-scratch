@@ -60,7 +60,7 @@ nvim_tree.setup {
     width = 50,
     height = 30,
     hide_root_folder = false,
-    side = "left",
+    side = "right",
     mappings = {
       custom_only = false,
       list = {
@@ -71,6 +71,17 @@ nvim_tree.setup {
     },
     number = false,
     relativenumber = false,
+    float = {
+      enable = false,
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 30,
+        height = 30,
+        row = 1,
+        col = 1,
+      },
+    },
   },
   trash = {
     cmd = "trash",
