@@ -116,6 +116,13 @@ local schemas = {
     url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/sam.schema.json",
   },
   {
+    description = "JS config",
+    fileMatch = {
+      "jsconfig.json",
+    },
+    url = "https://json.schemastore.org/jsconfig.json",
+  },
+  {
     description = "Json schema for properties json file for a GitHub Workflow template",
     fileMatch = {
       ".github/workflow-templates/**.properties.json",

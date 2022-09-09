@@ -115,7 +115,7 @@ keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
 keymap("n", "<leader>hu", ":Gitsigns reset_hunk<CR>", opts)
 
 ---- PreviewHunk
-keymap("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", opts)
+keymap("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
 
 ---- NextHunk
 keymap("n", "]g", ":Gitsigns next_hunk<CR>", opts)
