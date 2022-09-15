@@ -156,6 +156,11 @@ keymap("n", "<leader>gc", ":Telescope git_commits<CR>", opts)
 ---- Git branches
 keymap("n", "<leader>gb", ":Telescope git_branches<CR>", opts)
 
+---- Git worktrees
+keymap("n", "<leader>gt", ":Telescope git_worktree git_worktrees<CR>", opts)
+
+keymap("n", "<leader>gtt", ":Telescope git_worktree create_git_worktree<CR>", opts)
+
 ---- Flutter commands
 keymap("n", "<leader>fc", ":Telescope flutter commands<CR>", opts)
 

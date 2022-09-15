@@ -79,6 +79,9 @@ packer.startup(function(use)
   -- LazyGit
   use "kdheepak/lazygit.nvim"
 
+  -- WhichKey
+  -- use "folke/which-key.nvim"
+
   -- Easymotion
   use "easymotion/vim-easymotion"
 
@@ -86,8 +89,10 @@ packer.startup(function(use)
   use "karb94/neoscroll.nvim"
 
   -- Git
-  use 'tpope/vim-fugitive'
+  -- use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
+  use 'ThePrimeagen/git-worktree.nvim'
+
 
   -- TODO: add keymaps <06-07-22 > --
   use 'sindrets/diffview.nvim'
@@ -121,6 +126,11 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
   }
+  use 'nvim-treesitter/nvim-treesitter-context'
+  use 'p00f/nvim-ts-rainbow'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+
 
   -- Bookmarks
   use "MattesGroeger/vim-bookmarks"
@@ -150,6 +160,9 @@ packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
+  -- SchemaStore
+  -- use "b0o/schemastore.nvim"
 
   -- Snippy Snippets (Not USED)
   -- use "dcampos/nvim-snippy" --snippet engine

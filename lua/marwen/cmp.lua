@@ -114,13 +114,13 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "ultisnips" },
-    -- { name = "snippy" },
     { name = "nvim_lsp" },
     -- { name = "nvim_lsp_signature_help" },
-    { name = "treesitter" },
-    { name = "path" },
+    { name = "ultisnips" },
+    -- { name = "snippy" },
     { name = "buffer" },
+    { name = "treesitter" },
+    { name = "path" }
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

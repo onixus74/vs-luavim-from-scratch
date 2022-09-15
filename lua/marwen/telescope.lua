@@ -117,6 +117,9 @@ telescope.setup {
 
     },
 
+    git_worktree = {
+    },
+
     dash = {
       -- -- configure path to Dash.app if installed somewhere other than /Applications/Dash.app
       -- dash_app_path = '/Applications/Dash.app',
