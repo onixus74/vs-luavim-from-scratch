@@ -128,7 +128,6 @@ packer.startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'p00f/nvim-ts-rainbow'
-  use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
 
@@ -148,9 +147,10 @@ packer.startup(function(use)
   use "akinsho/flutter-tools.nvim"
 
   -- Debugging
-  use 'nvim-telescope/telescope-dap.nvim'
   use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-dap.nvim'
   use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
 
   -- Formatting
   -- use "lukas-reineke/lsp-format.nvim" -- NOT USED
