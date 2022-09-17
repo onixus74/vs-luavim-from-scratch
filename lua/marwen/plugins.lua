@@ -150,6 +150,7 @@ packer.startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'nvim-telescope/telescope-dap.nvim'
   use 'rcarriga/nvim-dap-ui'
+  use 'rcarriga/cmp-dap'
   use 'theHamsta/nvim-dap-virtual-text'
 
   -- Formatting
