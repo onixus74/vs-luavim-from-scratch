@@ -38,6 +38,13 @@ vim.cmd [[
     autocmd!
     autocmd FileType heex UltiSnipsAddFiletypes heex.eelixir
   augroup end
+
+  augroup _tiltfile
+    autocmd!
+    autocmd BufRead Tiltfile set filetype=tiltfile
+    autocmd BufRead Tiltfile set syntax=python
+    autocmd BufRead Tiltfile UltiSnipsAddFiletypes python
+  augroup end
 ]]
 
 -- autocmd FileType heex UltiSnipsAddFiletypes heex.eelixir
