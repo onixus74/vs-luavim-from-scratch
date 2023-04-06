@@ -19,7 +19,7 @@ local schemas = {
   ["https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json"] = ".cloudformation/*",
 
   -- Kubevela
-  ["https://raw.githubusercontent.com/oam-dev/kubevela/master/docs/apidoc/swagger.json"] = "*vela/**/*",
+  ["https://raw.githubusercontent.com/oam-dev/kubevela/master/docs/apidoc/swagger.json"] = "/*vela/**/*",
 
   -- Fly.io
   ["https://json.schemastore.org/fly.json"] = "*fly/**/*"

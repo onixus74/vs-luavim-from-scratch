@@ -124,6 +124,8 @@ keymap("n", "]g", ":Gitsigns next_hunk<CR>", opts)
 keymap("n", "[g", ":Gitsigns prev_hunk<CR>", opts)
 
 
+-- Diffview
+-- TODO: add bindings for Diffview  <28-09-22, onixus74> --
 
 -- Telescope
 ---- Buffers

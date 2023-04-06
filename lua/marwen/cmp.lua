@@ -40,6 +40,7 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "",
+  Copilot = "",
 }
 
 -- snippy.setup({
@@ -80,6 +81,7 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping.confirm { select = true },
 
     -- Ultisnips
+
     ["<CR>"] = cmp.mapping(
       function(fallback)
         -- ultisnips.mappings.expand_or_jump_forwards(fallback)
@@ -94,6 +96,11 @@ cmp.setup {
       end,
       { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
     ),
+    ["<C-CR>"] = cmp.mapping.confirm({
+      -- this is the important line
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
+    }),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -102,6 +109,8 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
+        -- cmp_tabnine = "[Tab9]",
+        copilot = "[Copilot]",
         ultisnips = "[UltiSnips]",
         -- snippy = "[Snippy]",
         nvim_lsp = "[LSP]",
@@ -114,14 +123,18 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = 'copilot' },
+    -- { name = 'cmp_tabnine' },
     { name = "nvim_lsp" },
     -- { name = "nvim_lsp_signature_help" },
     { name = "ultisnips" },
     -- { name = "snippy" },
     { name = "buffer" },
     { name = "treesitter" },
+    { name = "emoji" },
     { name = "path" }
   },
+
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -132,7 +145,6 @@ cmp.setup {
   },
   experimental = {
     ghost_text = true,
-    native_menu = false,
   },
 }
 

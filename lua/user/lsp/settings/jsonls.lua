@@ -46,6 +46,7 @@ local schemas = {
     fileMatch = {
       ".prettierrc",
       ".prettierrc.json",
+      ".prettierrc.yaml",
       "prettier.config.json",
     },
     url = "https://json.schemastore.org/prettierrc",

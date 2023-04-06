@@ -68,7 +68,7 @@ packer.startup(function(use)
   -- use "Cybolic/palenight.vim"
   -- use 'joshdick/onedark.vim'
   use 'navarasu/onedark.nvim'
-  use 'olimorris/onedarkpro.nvim'
+  -- use 'olimorris/onedarkpro.nvim'
 
   -- Colorizer
   use "norcalli/nvim-colorizer.lua"
@@ -89,9 +89,13 @@ packer.startup(function(use)
   use "karb94/neoscroll.nvim"
 
   -- Git
-  -- use 'tpope/vim-fugitive'
+  use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
   use 'ThePrimeagen/git-worktree.nvim'
+
+  -- Gitmoji
+  -- use 'Kachyz/vim-gitmoji'
+  use 'bruxisma/gitmoji.vim'
 
 
   -- TODO: add keymaps <06-07-22 > --
@@ -181,6 +185,9 @@ packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP snippet completions
+  use "hrsh7th/cmp-emoji" -- Emoji completions
+
+
   -- use "hrsh7th/cmp-nvim-lsp-signature-help" -- LSP signature help completions
   use "ray-x/cmp-treesitter" -- Treesitter completions
 
@@ -195,11 +202,46 @@ packer.startup(function(use)
     end
   }
 
+  -- Firenvim
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end 
+  }
+
   -- Dash
   -- use({
   --   'mrjones2014/dash.nvim',
   --   run = 'make install',
   -- })
+
+
+  -- tabnine
+  -- use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+  -- use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+
+  -- Gh Copilot
+  -- use { 'github/copilot.vim' }
+  -- use { 'hrsh7th/cmp-copilot' }
+
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  }
+
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  }
 
 
 
