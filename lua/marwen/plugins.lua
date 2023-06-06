@@ -147,6 +147,9 @@ packer.startup(function(use)
   -- Elixir Tools
   use 'Matsa59/potion-maker.nvim'
 
+  -- Typescript Tools
+  use 'SaschaMendel/vim-quicktype'
+
   -- Flutter Tools
   use "akinsho/flutter-tools.nvim"
 
