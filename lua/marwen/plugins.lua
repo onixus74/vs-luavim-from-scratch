@@ -42,7 +42,7 @@ packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
   -- Neovim Lua Development
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/popup.nvim"   -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- NvimTree
@@ -165,9 +165,13 @@ packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  -- use "tamago324/nlsp-settings.nvim"    -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
+  use "williamboman/mason.nvim"         -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim"
+  use "RRethy/vim-illuminate"
 
   -- SchemaStore
   -- use "b0o/schemastore.nvim"
@@ -183,12 +187,12 @@ packer.startup(function(use)
   use "honza/vim-snippets" -- a bunch of snippets to use
 
   -- Autocomplete
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/nvim-cmp"     -- The completion plugin
+  use "hrsh7th/cmp-buffer"   -- buffer completions
+  use "hrsh7th/cmp-path"     -- path completions
+  use "hrsh7th/cmp-cmdline"  -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP snippet completions
-  use "hrsh7th/cmp-emoji" -- Emoji completions
+  use "hrsh7th/cmp-emoji"    -- Emoji completions
 
 
   -- use "hrsh7th/cmp-nvim-lsp-signature-help" -- LSP signature help completions
@@ -198,7 +202,8 @@ packer.startup(function(use)
   use {
     'stevearc/aerial.nvim',
 
-    config = function() require('aerial').setup({
+    config = function()
+      require('aerial').setup({
         backends = { "lsp", "treesitter", "markdown" },
         filter_kind = false
       })
@@ -208,7 +213,7 @@ packer.startup(function(use)
   -- Firenvim
   use {
     'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end 
+    run = function() vim.fn['firenvim#install'](0) end
   }
 
   -- Dash
@@ -250,5 +255,4 @@ packer.startup(function(use)
 
   -- Tilt.dev / Starlark
   -- use "cappyzawa/starlark.vim"
-
 end)

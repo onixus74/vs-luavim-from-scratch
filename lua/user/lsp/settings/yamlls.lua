@@ -1,7 +1,7 @@
 local schemas = {
 
   -- Kubernetes
-  ["kubernetes"] = "infra*/**/*",
+  -- ["kubernetes"] = "infra*/**/*",
 
   -- Kedro
   ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
@@ -25,13 +25,21 @@ local schemas = {
   ["https://json.schemastore.org/fly.json"] = "*fly/**/*"
 }
 
+local custom_tags = { "Kustomization" }
+
 return {
   settings = {
     yaml = {
-      schemas = schemas
-      -- schemas = require('schemastore').json.schemas(),
-      -- format = { enable = true },
-      -- validate = { enable = true }
+      schemas = schemas,
+      customTags = custom_tags,
+      schemaStore = {
+        url = "https://www.schemastore.org/api/json/catalog.json",
+        enable = true,
+      },
+      format = { enable = true },
+      completion = true,
+      hover = true,
+      validate = true
     }
   }
 }
