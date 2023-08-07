@@ -49,7 +49,7 @@ packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
 
   -- Icons
-  use "kyazdani42/nvim-web-devicons"
+  use "nvim-tree/nvim-web-devicons"
 
   -- StatusLine
   use "nvim-lualine/lualine.nvim"
