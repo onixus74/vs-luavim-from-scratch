@@ -13,13 +13,15 @@ end
 
 
 local function my_on_attach(bufnr)
-  local api = require('nvim-tree.api')
-
   api.config.mappings.default_on_attach(bufnr)
 
-  vim.keymap.set('n', 'l', api.node.open.edit)
-  vim.keymap.set('n', 'h', api.node.open.horizontal)
-  vim.keymap.set('n', 'v', api.node.open.vertical)
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'h', api.node.open.horizontal, opts('Open horizontal'))
+  vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open vertical'))
 end
 
 nvim_tree.setup {
