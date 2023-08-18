@@ -46,7 +46,17 @@ packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- NvimTree
-  use "kyazdani42/nvim-tree.lua"
+  use "nvim-tree/nvim-tree.lua"
+
+  -- use {
+  --   'nvim-tree/nvim-tree.lua',
+  --
+  --   config = function()
+  --     local config = require('marwen.nvim-tree')
+  --
+  --     require('nvim-tree').setup(config)
+  --   end
+  -- }
 
   -- Icons
   use "nvim-tree/nvim-web-devicons"

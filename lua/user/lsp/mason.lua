@@ -5,6 +5,7 @@ local servers = {
 	"jsonls",
 	"yamlls",
 	"svelte",
+	"eslint",
 	"elixirls",
 	"tailwindcss",
 	"dockerls",

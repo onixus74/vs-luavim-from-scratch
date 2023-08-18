@@ -17,7 +17,6 @@ configs.setup {
     "erlang",
     "glsl",
     "heex",
-    "help",
     "javascript",
     "json",
     "json5",
@@ -46,13 +45,13 @@ configs.setup {
     "yaml",
     "zig"
   },
-  sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
+  sync_install = true,     -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
     enable = true,
   },
   highlight = {
-    enable = true, -- false will disable the whole extension
+    enable = true,    -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
     -- disable = { "elixir" },
     additional_vim_regex_highlighting = true,
@@ -91,7 +90,7 @@ configs.setup {
       -- You can choose the select mode (default is charwise 'v')
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
+        ['@function.outer'] = 'V',  -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
       -- If you set this to `true` (default is `false`) then any textobject is

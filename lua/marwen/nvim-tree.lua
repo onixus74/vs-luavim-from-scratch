@@ -6,18 +6,24 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
+local api_status_ok, api = pcall(require, "nvim-tree.api")
+if not api_status_ok then
   return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+
+local function my_on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set('n', 'l', api.node.open.edit)
+  vim.keymap.set('n', 'h', api.node.open.horizontal)
+  vim.keymap.set('n', 'v', api.node.open.vertical)
+end
 
 nvim_tree.setup {
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-  },
+  on_attach = my_on_attach,
   renderer = {
     root_folder_modifier = ":t",
     indent_width = 2,
@@ -72,15 +78,37 @@ nvim_tree.setup {
     width = 50,
     hide_root_folder = false,
     side = "right",
-    mappings = {
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h",                  cb = tree_cb "close_node" },
-        { key = "v",                  cb = tree_cb "vsplit" },
-      },
-    },
   },
+  update_focused_file = {
+    enable = true,
+    update_cwd = false,
+    ignore_list = {},
+  },
+  system_open = {
+    cmd = nil,
+    args = {},
+  },
+  filters = {
+    dotfiles = true,
+    custom = {},
+  },
+  git = {
+    enable = true,
+    ignore = true,
+    timeout = 500,
+  },
+  filesystem_watchers = {
+    enable = true,
+    debounce_delay = 50,
+  },
+  disable_netrw = true,
+  hijack_netrw = true,
 }
+
+
+
+
+
 
 -- OLD
 -- nvim_tree.setup {
