@@ -1,3 +1,19 @@
+local status_ok, mason = pcall(require, "mason")
+if not status_ok then
+	return
+end
+
+local mason_config_status_ok, mason_config = pcall(require, "mason_config")
+if not mason_config_status_ok then
+	return
+end
+
+local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status_ok then
+	return
+end
+
+
 local servers = {
 	"lua_ls",
 	"html",
@@ -37,16 +53,12 @@ local settings = {
 	max_concurrent_installers = 4,
 }
 
-require("mason").setup(settings)
-require("mason-lspconfig").setup({
+mason.setup(settings)
+mason_config.setup({
 	ensure_installed = servers,
 	automatic_installation = true,
 })
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	return
-end
 
 local opts = {}
 
