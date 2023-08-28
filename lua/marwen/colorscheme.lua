@@ -20,7 +20,8 @@ vim.cmd [[
 -- Onedark (navarasu/onedark.nvim)
 require('onedark').setup {
   -- style = 'cool',
-  style = 'deep',
+  -- style = 'deep',
+  style = 'darker',
   toggle_style_key = '<leader>cs'
 }
 require('onedark').load()
