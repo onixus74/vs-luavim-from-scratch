@@ -40,6 +40,7 @@ local kind_icons = {
   Operator = "󰆕",
   TypeParameter = " ",
   Misc = " ",
+  Copilot = "",
 }
 
 -- snippy.setup({
