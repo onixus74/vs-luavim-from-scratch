@@ -186,7 +186,7 @@ packer.startup(function(use)
   use "RRethy/vim-illuminate"
 
   -- Images Preview
-  use 'edluffy/hologram.nvim'
+  -- use 'edluffy/hologram.nvim'
 
 
   -- SchemaStore

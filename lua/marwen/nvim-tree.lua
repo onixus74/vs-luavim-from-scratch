@@ -28,6 +28,7 @@ nvim_tree.setup {
   on_attach = my_on_attach,
   renderer = {
     root_folder_modifier = ":t",
+    root_folder_label = true,
     indent_width = 2,
     icons = {
       glyphs = {
@@ -78,7 +79,6 @@ nvim_tree.setup {
   },
   view = {
     width = 50,
-    hide_root_folder = false,
     side = "right",
   },
   update_focused_file = {
