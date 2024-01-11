@@ -226,6 +226,9 @@ packer.startup(function(use)
     end
   }
 
+  -- Bufkill
+  use "qpkorr/vim-bufkill"
+
   -- Firenvim
   use {
     'glacambre/firenvim',
