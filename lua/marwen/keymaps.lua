@@ -234,7 +234,6 @@ keymap("n", "<leader>ww", ":WakaTimeToday<CR>", opts)
 -- keymap("n", "<leader>]", ":Gen<CR>", opts)
 
 -- Markdown
-
 keymap("n", "<leader>md", ":Glow<CR>", opts)
 
 -- Knap (Markdown/PDF/... preview)
