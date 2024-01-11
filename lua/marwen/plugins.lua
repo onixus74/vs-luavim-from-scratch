@@ -72,13 +72,7 @@ packer.startup(function(use)
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  -- use "lunarvim/darkplus.nvim"
-  -- use "projekt0n/github-nvim-theme"
-  -- use "drewtempelmeyer/palenight.vim"
-  -- use "Cybolic/palenight.vim"
-  -- use 'joshdick/onedark.vim'
   use 'navarasu/onedark.nvim'
-  -- use 'olimorris/onedarkpro.nvim'
 
   -- Colorizer
   use "norcalli/nvim-colorizer.lua"
@@ -149,7 +143,8 @@ packer.startup(function(use)
   use "MattesGroeger/vim-bookmarks"
 
   -- Markdown preview
-  use "frabjous/knap"
+  -- use "frabjous/knap"
+  use "ellisonleao/glow.nvim"
 
   -- Multi cursor
   -- use "mg979/vim-visual-multi"
@@ -187,10 +182,6 @@ packer.startup(function(use)
 
   -- Images Preview
   -- use 'edluffy/hologram.nvim'
-
-
-  -- SchemaStore
-  -- use "b0o/schemastore.nvim"
 
   -- Snippy Snippets (Not USED)
   -- use "dcampos/nvim-snippy" --snippet engine
@@ -235,21 +226,9 @@ packer.startup(function(use)
     run = function() vim.fn['firenvim#install'](0) end
   }
 
-  -- Dash
-  -- use({
-  --   'mrjones2014/dash.nvim',
-  --   run = 'make install',
-  -- })
-
-
-  -- tabnine
-  -- use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
-  -- use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
-
   -- Gh Copilot
   -- use { 'github/copilot.vim' }
   -- use { 'hrsh7th/cmp-copilot' }
-
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -270,8 +249,20 @@ packer.startup(function(use)
     end
   }
 
+  -- LLM
+  use "David-Kunz/gen.nvim"
+
+  -- WIP
+  use {
+    "huynle/ogpt.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  }
 
 
-  -- Tilt.dev / Starlark
-  -- use "cappyzawa/starlark.vim"
+  --- Cmdline UI
+  use { "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } }
 end)

@@ -228,6 +228,14 @@ keymap("n", "<leader>tS", ":PotionMakerExecuteTestForCurrentFile<CR>", opts)
 -- Wakatime
 keymap("n", "<leader>ww", ":WakaTimeToday<CR>", opts)
 
+-- LLM
 
--- Knap (Preview)
-keymap("n", "<leader>pp", "lua require('knap').toggle_autopreviewing()", opts)
+-- gen.nvim
+-- keymap("n", "<leader>]", ":Gen<CR>", opts)
+
+-- Markdown
+
+keymap("n", "<leader>md", ":Glow<CR>", opts)
+
+-- Knap (Markdown/PDF/... preview)
+-- keymap("n", "<leader>mdp", ":lua require('knap').toggle_autopreviewing()<CR>", opts)
