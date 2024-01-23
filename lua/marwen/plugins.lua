@@ -262,6 +262,14 @@ packer.startup(function(use)
     }
   }
 
+  -- Obisdian
+  use {
+    "epwalsh/obsidian.nvim",
+    tag = "*", -- recommended, use latest release instead of latest commit
+    requires = {
+      "nvim-lua/plenary.nvim",
+    }
+  }
 
   --- Cmdline UI
   use { "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } }
