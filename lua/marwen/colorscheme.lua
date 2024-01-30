@@ -1,39 +1,69 @@
-vim.cmd [[
-  try
-    set background=dark
-    "colorscheme palenight
-    "colorscheme onedark
-    colorscheme onedarker
-    "colorscheme onedarkpro
-  catch /^Vim\%((\a\+)\)\=:E185/
-    colorscheme default
-    set background=dark
-  endtry
-]]
+-- vim.cmd([[
+--   try
+--     set background=dark
+--     "colorscheme palenight
+--     "colorscheme onedark
+--     colorscheme onedarker
+--     "colorscheme onedarkpro
+--   catch /^Vim\%((\a\+)\)\=:E185/
+--     colorscheme default
+--     set background=dark
+--   endtry
+-- ]])
 
 -- Shade
 -- require "shade".setup({
 --   overlay_opacity = 70,
 -- })
 
-
 -- Onedark (navarasu/onedark.nvim)
-require('onedark').setup {
-  -- style = 'cool',
-  -- style = 'deep',
-  style = 'darker',
-  toggle_style_key = '<leader>cs'
-}
-require('onedark').load()
+require("onedark").setup({
+	-- Main options --
+	-- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	-- style = "dark", -- Default theme style.
+	-- style = "darker",
+	style = "cool",
+	-- style = "deep",
 
+	transparent = false, -- Show/hide background
+	term_colors = true, -- Change terminal color as per the selected theme style
+	ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+	cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
--- Onedark Pro (olimorris/onedarkpro.nvim)
--- require "onedarkpro".setup({
---   dark_theme = 'onedark_vivid',
--- })
+	-- toggle theme style ---
+	toggle_style_key = "<leader>cs", -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
 
--- require('onedarkpro').load()
+	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
 
+	-- Change code style ---
+	-- Options are italic, bold, underline, none
+	-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
+	code_style = {
+		comments = "italic",
+		keywords = "none",
+		functions = "none",
+		strings = "none",
+		variables = "none",
+	},
+
+	-- Lualine options --
+	lualine = {
+		transparent = false, -- lualine center bar transparency
+	},
+
+	-- Custom Highlights --
+	colors = {}, -- Override default colors
+	highlights = {}, -- Override highlight groups
+
+	-- Plugins Config --
+	diagnostics = {
+		darker = true, -- darker colors for diagnostic
+		undercurl = true, -- use undercurl instead of underline for diagnostics
+		background = true, -- use background color for virtual text
+	},
+})
+
+require("onedark").load()
 
 -- Colorizer
-require 'colorizer'.setup()
+require("colorizer").setup()
