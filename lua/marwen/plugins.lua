@@ -269,15 +269,15 @@ packer.startup(function(use)
 		},
 	})
 
-	--- Cmdline UI
+	--- Noice
 	use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } })
 
-	use({
-		"rlch/github-notifications.nvim",
-		config = [[require('config.github-notifications')]],
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	})
+	-- use({
+	-- 	"rlch/github-notifications.nvim",
+	-- 	config = [[require('config.github-notifications')]],
+	-- 	requires = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- })
 end)

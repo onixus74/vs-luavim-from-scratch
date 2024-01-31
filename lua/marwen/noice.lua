@@ -4,7 +4,9 @@ if not status_ok then
 end
 
 noice.setup({
+
 	messages = {
-		enabled = false,
+		-- enabled = false,
+		view = "cmdline",
 	},
 })
