@@ -6,7 +6,6 @@ end
 noice.setup({
 
 	messages = {
-		-- enabled = false,
-		view = "cmdline",
+		enabled = false,
 	},
 })

@@ -16,14 +16,10 @@
 --   overlay_opacity = 70,
 -- })
 
--- Onedark (navarasu/onedark.nvim)
 require("onedark").setup({
 	-- Main options --
 	-- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-	-- style = "dark", -- Default theme style.
-	-- style = "darker",
-	style = "cool",
-	-- style = "deep",
+	style = "warmer",
 
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
@@ -40,9 +36,9 @@ require("onedark").setup({
 	-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
 	code_style = {
 		comments = "italic",
-		keywords = "none",
-		functions = "none",
-		strings = "none",
+		keywords = "italic",
+		functions = "italic",
+		strings = "italic",
 		variables = "none",
 	},
 
