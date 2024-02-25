@@ -216,6 +216,19 @@ packer.startup(function(use)
 	-- Bufkill
 	use("qpkorr/vim-bufkill")
 
+	-- Yaml Companion
+	use({
+		"someone-stole-my-name/yaml-companion.nvim",
+		requires = {
+			{ "neovim/nvim-lspconfig" },
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+		config = function()
+			require("telescope").load_extension("yaml_schema")
+		end,
+	})
+
 	-- Firenvim
 	use({
 		"glacambre/firenvim",
