@@ -19,7 +19,7 @@
 require("onedark").setup({
 	-- Main options --
 	-- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-	style = "warmer",
+	style = "deep",
 
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
