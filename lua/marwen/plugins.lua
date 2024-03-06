@@ -285,12 +285,13 @@ packer.startup(function(use)
 	--- Noice
 	use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } })
 
-	-- use({
-	-- 	"rlch/github-notifications.nvim",
-	-- 	config = [[require('config.github-notifications')]],
-	-- 	requires = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- })
+	-- Github Notifications
+	use({
+		"rlch/github-notifications.nvim",
+		config = [[require('config.github-notifications')]],
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 end)

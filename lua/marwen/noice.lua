@@ -4,8 +4,12 @@ if not status_ok then
 end
 
 noice.setup({
-
+	notify = {
+		view = "mini",
+	},
 	messages = {
-		enabled = false,
+		view = "mini",
+		view_error = "mini",
+		view_warn = "mini",
 	},
 })

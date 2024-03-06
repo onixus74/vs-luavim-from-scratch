@@ -110,7 +110,8 @@ keymap("n", "]g", ":Gitsigns next_hunk<CR>", opts)
 keymap("n", "[g", ":Gitsigns prev_hunk<CR>", opts)
 
 -- Diffview
--- TODO: add bindings for Diffview  <28-09-22, onixus74> --
+keymap("n", "<leader>dv", ":DiffviewOpen<CR>", opts)
+keymap("n", "<leader>dc", ":DiffviewClose<CR>", opts)
 
 -- Telescope
 ---- Buffers
@@ -147,6 +148,9 @@ keymap("n", "<leader>gb", ":Telescope git_branches<CR>", opts)
 keymap("n", "<leader>gt", ":Telescope git_worktree git_worktrees<CR>", opts)
 
 keymap("n", "<leader>gtt", ":Telescope git_worktree create_git_worktree<CR>", opts)
+
+---- Github Notifications
+keymap("n", "<leader>gh", ":Telescope ghn<CR>", opts)
 
 ---- Flutter commands
 keymap("n", "<leader>fc", ":Telescope flutter commands<CR>", opts)
@@ -201,6 +205,25 @@ keymap("n", "<leader>tS", ":PotionMakerExecuteTestForCurrentFile<CR>", opts)
 
 -- Wakatime
 keymap("n", "<leader>ww", ":WakaTimeToday<CR>", opts)
+
+-- Obsidian
+---- fuzzy files
+keymap("n", "<leader>oq", ":ObsidianQuickSwitch<CR>", opts)
+
+---- fuzzy search
+keymap("n", "<leader>os", ":ObsidianSearch<CR>", opts)
+
+-- creates a new note
+keymap("n", "<leader>on", ":ObsidianNew<CR>", opts)
+
+---- obsidian use template
+keymap("n", "<leader>ot", ":ObsidianTags<CR>", opts)
+
+---- obsidian use template
+keymap("n", "<leader>ott", ":ObsidianTemplate<CR>", opts)
+
+---- opens obsidian app
+keymap("n", "<leader>oo", ":ObsidianOpen<CR>", opts)
 
 -- LLM
 
