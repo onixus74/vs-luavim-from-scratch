@@ -42,7 +42,7 @@ packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 
 	-- Neovim Lua Development
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("nvim-lua/popup.nvim")  -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 
 	-- NvimTree
@@ -169,7 +169,7 @@ packer.startup(function(use)
 	-- LSP
 	use("williamboman/mason.nvim") -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig") -- enable LSP
+	use("neovim/nvim-lspconfig")  -- enable LSP
 	-- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 	-- use "tamago324/nlsp-settings.nvim"    -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
@@ -191,12 +191,12 @@ packer.startup(function(use)
 	use("honza/vim-snippets") -- a bunch of snippets to use
 
 	-- Autocomplete
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/nvim-cmp")    -- The completion plugin
+	use("hrsh7th/cmp-buffer")  -- buffer completions
+	use("hrsh7th/cmp-path")    -- path completions
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("hrsh7th/cmp-nvim-lsp") -- LSP snippet completions
-	use("hrsh7th/cmp-emoji") -- Emoji completions
+	use("hrsh7th/cmp-emoji")   -- Emoji completions
 
 	-- use "hrsh7th/cmp-nvim-lsp-signature-help" -- LSP signature help completions
 	use("ray-x/cmp-treesitter") -- Treesitter completions
@@ -230,19 +230,20 @@ packer.startup(function(use)
 	})
 
 	-- Firenvim
-	use({
-		"glacambre/firenvim",
-		run = function()
-			vim.fn["firenvim#install"](0)
-		end,
-	})
+	-- use({
+	-- 	"glacambre/firenvim",
+	-- 	run = function()
+	-- 		vim.fn["firenvim#install"](0)
+	-- 	end,
+	-- })
 
 	-- Gh Copilot
 	-- use { 'github/copilot.vim' }
 	-- use { 'hrsh7th/cmp-copilot' }
+
 	use({
 		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
+		cmd = "copilot",
 		event = "InsertEnter",
 		config = function()
 			require("copilot").setup({
@@ -262,16 +263,6 @@ packer.startup(function(use)
 
 	-- LLM
 	use("David-Kunz/gen.nvim")
-
-	-- WIP
-	use({
-		"huynle/ogpt.nvim",
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	})
 
 	-- Obisdian
 	use({

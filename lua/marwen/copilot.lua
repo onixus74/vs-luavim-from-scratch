@@ -1,9 +1,9 @@
 local status_ok, copilot = pcall(require, "copilot")
 if not status_ok then
-  return
+	return
 end
 
 copilot.setup({
-  suggestion = { enabled = false, auto_trigger = false },
-  panel = { enabled = false },
+	suggestion = { enabled = false, auto_trigger = false },
+	panel = { enabled = false },
 })

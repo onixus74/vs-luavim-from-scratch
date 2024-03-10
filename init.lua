@@ -44,8 +44,6 @@ require("marwen.indentline")
 require("marwen.noice")
 require("marwen.markdown")
 require("marwen.gen")
-require("marwen.obsidian")
+-- require("marwen.copilot")
 require("marwen.github-notifications")
--- require "marwen.ogpt"
--- require "marwen.copilot"
--- require "marwen.tabnine"
+require("marwen.obsidian")

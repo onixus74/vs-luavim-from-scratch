@@ -3,11 +3,21 @@ if not status_ok then
 	return
 end
 
+local os = require("os").getenv("OS")
+
+local function get_obsidian_directory()
+	if os == "macos" then
+		return "/Users/marwen/Desktop/_workspace/_tools/obsidian/onixus74"
+	else
+		return "/mnt/c/Users/marwe/OneDrive/Desktop/_workspace/_onixus74/onixus74.md"
+	end
+end
+
 obsidian.setup({
 	workspaces = {
 		{
 			name = "onixus74_macos",
-			path = "/Users/marwen/Desktop/_workspace/_tools/obsidian/onixus74",
+			path = get_obsidian_directory(),
 		},
 	},
 	new_notes_location = "Inbox",
