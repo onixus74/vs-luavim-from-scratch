@@ -17,7 +17,8 @@ vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = '', linehl = '', n
 dap.adapters.mix_task = {
   type = 'executable',
   -- command = '/Users/marwen/.elixir-ls/release/debugger.sh', -- debugger.bat for windows
-  command = '/Users/marwen/.local/share/nvim/lsp_servers/elixir/elixir-ls/debugger.sh', -- debugger.bat for windows
+  command = '/Users/marwen/.local/share/nvim/mason/packages/elixir-ls/debug_adapter.sh', -- debugger.bat for windows
+
   args = {}
 }
 

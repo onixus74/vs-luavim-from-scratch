@@ -158,6 +158,7 @@ packer.startup(function(use)
 
 	-- Debugging
 	use("mfussenegger/nvim-dap")
+	use("nvim-neotest/nvim-nio")
 	use("nvim-telescope/telescope-dap.nvim")
 	use("rcarriga/nvim-dap-ui")
 	use("rcarriga/cmp-dap")

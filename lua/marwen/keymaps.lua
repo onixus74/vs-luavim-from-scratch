@@ -223,7 +223,7 @@ keymap("n", "<leader>ot", ":ObsidianTags<CR>", opts)
 keymap("n", "<leader>ott", ":ObsidianTemplate<CR>", opts)
 
 ---- opens obsidian app
-keymap("n", "<leader>oo", ":ObsidianOpen<CR>", opts)
+keymap("n", "<leader>op", ":ObsidianOpen<CR>", opts)
 
 -- LLM
 

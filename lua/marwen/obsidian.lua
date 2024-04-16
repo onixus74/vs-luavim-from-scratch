@@ -7,7 +7,7 @@ local os = require("os").getenv("OS")
 
 local function get_obsidian_directory()
 	if os == "macos" then
-		return "/Users/marwen/Desktop/_workspace/_tools/obsidian/onixus74"
+		return "/Users/marwen/Desktop/_workspace/_onixus74/onixus74.md"
 	else
 		return "/mnt/c/Users/marwe/OneDrive/Desktop/_workspace/_onixus74/onixus74.md"
 	end
