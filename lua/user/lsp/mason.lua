@@ -13,7 +13,6 @@ if not lspconfig_status_ok then
 	return
 end
 
-
 local servers = {
 	"lua_ls",
 	"html",
@@ -31,6 +30,7 @@ local servers = {
 	-- "cssls",
 	-- "bashls",
 	-- "pyright",
+	-- "stylua", -- install manually
 	-- "htmlbeautifier" -- install manually
 	-- "stylelint" -- install manually
 	-- "yamllint" -- install manually
@@ -39,6 +39,7 @@ local servers = {
 	-- "prettier" -- install manually
 	-- "black" -- install manually
 	-- "codespell" -- install manually
+	-- "sqlfluff" -- install manually
 }
 
 local settings = {
@@ -59,7 +60,6 @@ mason_config.setup({
 	ensure_installed = servers,
 	automatic_installation = true,
 })
-
 
 local opts = {}
 

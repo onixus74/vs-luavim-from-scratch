@@ -1,6 +1,6 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
-  return
+	return
 end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -11,36 +11,42 @@ local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
 
 null_ls.setup({
-  debug = false,
-  sources = {
-    formatting.stylua,
+	debug = false,
+	sources = {
+		-- LUA
+		formatting.stylua,
 
-    -- PRETTIER
-    null_ls.builtins.formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote" } }),
+		-- PRETTIER
+		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote" } }),
 
-    -- JAVASCRIPT
-    diagnostics.eslint,
+		-- JAVASCRIPT
+		diagnostics.eslint,
 
-    -- ELIXIR
-    diagnostics.credo,
-    formatting.mix,
-    formatting.htmlbeautifier.with({
-      extra_args = { "-b", "1" },
-      filetypes = { "eelixir", "html.eex", "html.leex" },
-    }),
+		-- ELIXIR
+		diagnostics.credo,
+		formatting.mix,
+		formatting.htmlbeautifier.with({
+			extra_args = { "-b", "1" },
+			filetypes = { "eelixir", "html.eex", "html.leex" },
+		}),
 
-    -- PYTHON
-    formatting.black.with({ extra_args = { "--fast" } }),
+		-- PYTHON
+		formatting.black.with({ extra_args = { "--fast" } }),
 
-    -- OPENAPI
-    -- diagnostics.vacuum,
-    -- diagnostics.spectral,
+		-- OPENAPI
+		-- diagnostics.vacuum,
+		-- diagnostics.spectral,
 
-    -- YAML
-    -- diagnostics.yamllint
-    -- formatting.yamlfix,
+		-- YAML
+		-- diagnostics.yamllint
+		-- formatting.yamlfix,
 
-    -- GITHUB ACTIONS
-    diagnostics.actionlint
-  },
+		-- GITHUB ACTIONS
+		diagnostics.actionlint,
+
+		-- SQL
+		-- formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }), -- formatting is done with sqls
+		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "ansi" } }),
+		forma,
+	},
 })

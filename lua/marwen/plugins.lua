@@ -153,6 +153,9 @@ packer.startup(function(use)
 	-- Typescript Tools
 	use("SaschaMendel/vim-quicktype")
 
+	-- SQL Tools
+	use 'nanotee/sqls.nvim'
+
 	-- Flutter Tools
 	use("akinsho/flutter-tools.nvim")
 
