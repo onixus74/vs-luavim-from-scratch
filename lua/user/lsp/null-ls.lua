@@ -47,6 +47,5 @@ null_ls.setup({
 		-- SQL
 		-- formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }), -- formatting is done with sqls
 		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "ansi" } }),
-		forma,
 	},
 })
