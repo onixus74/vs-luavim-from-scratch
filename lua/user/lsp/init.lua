@@ -7,6 +7,7 @@ require "user.lsp.mason"
 require("user.lsp.handlers").setup()
 require "user.lsp.null-ls"
 require "user.lsp.dap"
+require "user.lsp.sqls"
 
 -- Tilt dev
 lsp_config.tilt_ls.setup({})
