@@ -26,7 +26,7 @@ local servers = {
 	"dockerls",
 	"docker_compose_language_service",
 	"grammarly",
-	"sqls",
+	-- "sqls", -- No need, using sqls.nvim
 	-- "cssls",
 	-- "bashls",
 	-- "pyright",

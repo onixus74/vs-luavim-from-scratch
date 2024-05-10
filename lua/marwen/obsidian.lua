@@ -3,10 +3,10 @@ if not status_ok then
 	return
 end
 
-local os = require("os").getenv("OS")
+local os = vim.loop.os_uname().sysname
 
 local function get_obsidian_directory()
-	if os == "macos" then
+	if os == "Darwin" then
 		return "/Users/marwen/Desktop/_workspace/_onixus74/onixus74.md"
 	else
 		return "/mnt/c/Users/marwe/OneDrive/Desktop/_workspace/_onixus74/onixus74.md"
@@ -31,6 +31,4 @@ obsidian.setup({
 	attachments = {
 		img_folder = "_/attachements",
 	},
-
-	-- see below for full list of options 👇
 })

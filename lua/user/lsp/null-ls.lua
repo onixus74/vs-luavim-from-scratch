@@ -45,7 +45,8 @@ null_ls.setup({
 		diagnostics.actionlint,
 
 		-- SQL
-		-- formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }), -- formatting is done with sqls
+		-- install sqlfluff with 'pipx install sqlfluff'
+		formatting.sqlfluff.with({ extra_args = { "--dialect", "ansi" } }),
 		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "ansi" } }),
 	},
 })
