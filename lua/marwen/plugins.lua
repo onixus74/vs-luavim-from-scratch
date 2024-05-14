@@ -163,10 +163,12 @@ packer.startup(function(use)
 	use("akinsho/flutter-tools.nvim")
 
 	-- Debugging
-	use("mfussenegger/nvim-dap")
-	use("nvim-neotest/nvim-nio")
+	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
+
+	-- use("mfussenegger/nvim-dap")
+	-- use("nvim-neotest/nvim-nio")
+	-- use("rcarriga/nvim-dap-ui")
 	use("nvim-telescope/telescope-dap.nvim")
-	use("rcarriga/nvim-dap-ui")
 	use("rcarriga/cmp-dap")
 	use("theHamsta/nvim-dap-virtual-text")
 
