@@ -244,3 +244,10 @@ keymap("n", "<leader>md", ":Glow<CR>", opts)
 
 -- Knap (Markdown/PDF/... preview)
 -- keymap("n", "<leader>mdp", ":lua require('knap').toggle_autopreviewing()<CR>", opts)
+
+-- Multi cursor
+vim.cmd([[
+  let g:VM_maps = {}
+  let g:VM_maps['Find Under']         = '<C-i>'
+  let g:VM_maps['Find Subword Under'] = '<C-i>'
+]])

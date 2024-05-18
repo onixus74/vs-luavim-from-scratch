@@ -64,7 +64,8 @@ packer.startup(function(use)
 	-- StatusLine
 	use("nvim-lualine/lualine.nvim")
 
-	use({ "akinsho/bufferline.nvim", tag = "v2.5.1", requires = "kyazdani42/nvim-web-devicons" })
+	-- use({ "akinsho/bufferline.nvim", tag = "v2.5.1", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -147,7 +148,7 @@ packer.startup(function(use)
 	-- vim-abolish
 
 	-- Multi cursor
-	-- use "mg979/vim-visual-multi"
+	use("mg979/vim-visual-multi")
 
 	-- Elixir Tools
 	use("Matsa59/potion-maker.nvim")
@@ -163,7 +164,7 @@ packer.startup(function(use)
 	use("akinsho/flutter-tools.nvim")
 
 	-- Debugging
-	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 
 	-- use("mfussenegger/nvim-dap")
 	-- use("nvim-neotest/nvim-nio")
@@ -288,7 +289,7 @@ packer.startup(function(use)
 	-- Github Notifications
 	use({
 		"rlch/github-notifications.nvim",
-		config = [[require('config.github-notifications')]],
+		config = [[require('github-notifications')]],
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",

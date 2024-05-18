@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
   " Autoformat
   augroup _lsp
     autocmd!
@@ -47,7 +47,7 @@ vim.cmd [[
     autocmd BufRead Tiltfile set syntax=python
     autocmd BufRead Tiltfile UltiSnipsAddFiletypes python
   augroup end
-]]
+]])
 
 -- autocmd FileType heex UltiSnipsAddFiletypes heex.eelixir
 -- autocmd BufRead *.heex setfiletype heex.eelixir
