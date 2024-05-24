@@ -158,7 +158,6 @@ packer.startup(function(use)
 
 	-- SQL Tools
 	use("nanotee/sqls.nvim")
-	-- use("xemptuous/sqlua.nvim")
 
 	-- Flutter Tools
 	use("akinsho/flutter-tools.nvim")
@@ -180,8 +179,6 @@ packer.startup(function(use)
 	use("williamboman/mason.nvim") -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig") -- enable LSP
-	-- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-	-- use "tamago324/nlsp-settings.nvim"    -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
 	-- Highlighting
@@ -246,6 +243,10 @@ packer.startup(function(use)
 	-- 		vim.fn["firenvim#install"](0)
 	-- 	end,
 	-- })
+
+	-- Tabnine
+	use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
 	-- Gh Copilot
 	-- use { 'github/copilot.vim' }

@@ -88,7 +88,7 @@ lualine.setup({
 		lualine_b = { "mode" },
 		lualine_c = { filename },
 		-- lualine_x = { "encoding", "fileformat", spaces,  "filetype" },
-		lualine_x = { diff, filetype },
+		lualine_x = { diff, "encoding", filetype },
 		lualine_y = { progress },
 		lualine_z = { require("github-notifications").statusline_notification_count },
 	},
