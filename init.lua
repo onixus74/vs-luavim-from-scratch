@@ -44,7 +44,7 @@ require("marwen.markdown")
 require("marwen.gen")
 -- require("marwen.copilot")
 require("marwen.github-notifications")
--- require("marwen.obsidian")
+require("marwen.obsidian")
 require("marwen.sqls")
 
 -- UNUSED
