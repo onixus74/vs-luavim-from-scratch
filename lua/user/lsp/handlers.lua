@@ -23,9 +23,11 @@ M.setup = function()
 
 	local config = {
 		virtual_text = true, -- disable virtual text
-		signs = {
-			active = signs, -- show signs
-		},
+		-- DEACTIVATE DIAGNOSTIC ICONS on MARGINS
+		-- signs = {
+		-- 	active = signs, -- show signs
+		-- },
+		signs = false,
 		update_in_insert = true,
 		underline = true,
 		severity_sort = true,
