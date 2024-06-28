@@ -46,7 +46,14 @@ null_ls.setup({
 
 		-- SQL
 		-- install sqlfluff with 'pipx install sqlfluff'
-		formatting.sqlfluff.with({ extra_args = { "--dialect", "ansi" } }),
-		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "ansi" } }),
+		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
+
+		-- install sql-formatter with 'pnpm install -g sql-formatter'
+		formatting.sql_formatter.with({
+			extra_args = {
+				"--config",
+				'{"language":"postgresql","tabWidth":2,"keywordCase":"upper","dataTypeCase":"upper","functionCase":"upper","expressionWidth":80,"linesBetweenQueries":2}',
+			},
+		}),
 	},
 })

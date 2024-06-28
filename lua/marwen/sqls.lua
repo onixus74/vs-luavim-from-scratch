@@ -10,7 +10,7 @@ end
 
 lspconfig.sqls.setup({
 	on_attach = function(client, bufnr)
-		-- disable sqls formatting in favor of sqlfluff
+		-- disable sqls formatting in favor of sql-formatter via null_ls
 		client.server_capabilities.documentFormattingProvider = false
 
 		sqls.on_attach(client, bufnr) -- require sqls.nvim
