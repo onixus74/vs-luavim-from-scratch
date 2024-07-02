@@ -48,23 +48,12 @@ packer.startup(function(use)
 	-- NvimTree
 	use("nvim-tree/nvim-tree.lua")
 
-	-- use {
-	--   'nvim-tree/nvim-tree.lua',
-	--
-	--   config = function()
-	--     local config = require('marwen.nvim-tree')
-	--
-	--     require('nvim-tree').setup(config)
-	--   end
-	-- }
-
 	-- Icons
 	use("nvim-tree/nvim-web-devicons")
 
 	-- StatusLine
 	use("nvim-lualine/lualine.nvim")
 
-	-- use({ "akinsho/bufferline.nvim", tag = "v2.5.1", requires = "kyazdani42/nvim-web-devicons" })
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- Telescope
@@ -92,6 +81,9 @@ packer.startup(function(use)
 
 	-- Smoothscroll
 	use("karb94/neoscroll.nvim")
+
+	-- Scroll map
+	use("lewis6991/satellite.nvim")
 
 	-- Git
 	use("tpope/vim-fugitive")
@@ -164,10 +156,6 @@ packer.startup(function(use)
 
 	-- Debugging
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
-
-	-- use("mfussenegger/nvim-dap")
-	-- use("nvim-neotest/nvim-nio")
-	-- use("rcarriga/nvim-dap-ui")
 	use("nvim-telescope/telescope-dap.nvim")
 	use("rcarriga/cmp-dap")
 	use("theHamsta/nvim-dap-virtual-text")
@@ -186,11 +174,6 @@ packer.startup(function(use)
 
 	-- Images Preview
 	-- use 'edluffy/hologram.nvim'
-
-	-- Snippy Snippets (Not USED)
-	-- use "dcampos/nvim-snippy" --snippet engine
-	-- use "dcampos/cmp-snippy" -- Snippy snippet completions
-	-- use "honza/vim-snippets" -- a bunch of snippets to use
 
 	-- Ultisnips Snippets
 	use("quangnguyen30192/cmp-nvim-ultisnips")
