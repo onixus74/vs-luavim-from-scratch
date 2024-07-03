@@ -85,6 +85,12 @@ packer.startup(function(use)
 	-- Scroll map
 	use("lewis6991/satellite.nvim")
 
+	-- Folding
+	use({
+		"kevinhwang91/nvim-ufo",
+		requires = "kevinhwang91/promise-async",
+	})
+
 	-- Git
 	use("tpope/vim-fugitive")
 	use("lewis6991/gitsigns.nvim")
