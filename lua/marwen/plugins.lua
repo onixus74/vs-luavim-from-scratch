@@ -143,6 +143,11 @@ packer.startup(function(use)
 	-- use "frabjous/knap"
 	use("ellisonleao/glow.nvim")
 
+	-- Mermaid diagram
+	use({ "3rd/diagram.nvim", requires = {
+		"3rd/image.nvim",
+	} })
+
 	-- vim-abolish
 
 	-- Multi cursor
@@ -211,6 +216,9 @@ packer.startup(function(use)
 
 	-- Bufkill
 	use("qpkorr/vim-bufkill")
+
+	-- CSV
+	-- use("chrisbra/csv.vim")
 
 	-- Yaml Companion
 	use({
