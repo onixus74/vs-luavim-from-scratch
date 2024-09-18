@@ -16,7 +16,7 @@ end
 local servers = {
 	"lua_ls",
 	"html",
-	"tsserver",
+	"ts_ls",
 	"jsonls",
 	"yamlls",
 	"svelte",

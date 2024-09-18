@@ -78,7 +78,7 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
+	if client.name == "ts_ls" then
 		client.resolved_capabilities.document_formatting = false
 		-- client.server_capabilities.documentFormattingProvider = false -- this is the updated version TODO: verify on typescript
 	end
