@@ -225,9 +225,7 @@ keymap("n", "<leader>ott", ":ObsidianTemplate<CR>", opts)
 ---- opens obsidian app
 keymap("n", "<leader>op", ":ObsidianOpen<CR>", opts)
 
--- LLM
-
--- Gen.nvim
+-- Ollama LLMS - Gen.nvim
 keymap("n", "<C-g>g", ":Gen<CR>", opts)
 keymap("n", "<C-g>a", ":Gen Ask<CR>", opts)
 keymap("n", "<C-g>c", ":Gen Chat<CR>", opts)

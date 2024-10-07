@@ -252,27 +252,66 @@ packer.startup(function(use)
 	-- use { 'github/copilot.vim' }
 	-- use { 'hrsh7th/cmp-copilot' }
 
-	use({
-		"zbirenbaum/copilot.lua",
-		cmd = "copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({
-				suggestion = { enabled = false },
-				panel = { enabled = false },
-			})
-		end,
-	})
+	-- Gh Copilot Alternative
+	-- use({
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = "copilot",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		require("copilot").setup({
+	-- 			suggestion = { enabled = false },
+	-- 			panel = { enabled = false },
+	-- 		})
+	-- 	end,
+	-- })
+	--
+	-- use({
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	after = { "copilot.lua" },
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup()
+	-- 	end,
+	-- })
 
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	})
+	-- WIP Avante.nvim - Cursor AI Alternative
+	use {
+		'yetone/avante.nvim',
+		run = "make", -- or "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" for Windows
+		requires = {
+			'nvim-treesitter/nvim-treesitter',
+			'stevearc/dressing.nvim',
+			'nvim-lua/plenary.nvim',
+			'MunifTanjim/nui.nvim',
+			'nvim-tree/nvim-web-devicons', -- optional, for file icons
+			'zbirenbaum/copilot.lua',   -- optional, for Copilot integration
+			{
+				'HakonHarnes/img-clip.nvim',
+				config = function()
+					require('img-clip').setup({
+						default = {
+							embed_image_as_base64 = false,
+							prompt_for_file_name = false,
+							use_absolute_path = true, -- required for Windows users
+							drag_and_drop = {
+								insert_mode = true,
+							},
+						},
+					})
+				end,
+			},
+			{
+				'MeanderingProgrammer/render-markdown.nvim',
+				config = function()
+					require('render-markdown').setup({
+						file_types = { "markdown", "Avante" },
+					})
+				end,
+			},
+		},
+	}
+	-- END WIP Avante.nvim - Cursor AI Alternative
 
-	-- LLM
+	-- Ollama LLMs
 	use("David-Kunz/gen.nvim")
 
 	-- Obisdian
