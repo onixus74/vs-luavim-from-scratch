@@ -51,6 +51,27 @@ dap.configurations.elixir = {
     task = "phx.server",
     request = "launch",
     projectDir = "${workspaceFolder}"
+  },
+  {
+    type = "mix_task",
+    name = "test",
+    task = "test",
+    request = "launch",
+    projectDir = "${workspaceFolder}"
+  },
+  {
+    type = "mix_task",
+    name = "test.interactive",
+    task = "test.interactive",
+    request = "launch",
+    projectDir = "${workspaceFolder}"
+  },
+  {
+    type = "mix_task",
+    name = "test.interactive --only wip",
+    task = "test.interactive --only wip",
+    request = "launch",
+    projectDir = "${workspaceFolder}"
   }
 
 }

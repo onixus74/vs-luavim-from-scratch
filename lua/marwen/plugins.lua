@@ -223,6 +223,13 @@ packer.startup(function(use)
 	-- CSV
 	-- use("chrisbra/csv.vim")
 
+	use {
+		'hat0uma/csvview.nvim',
+		config = function()
+			require('csvview').setup()
+		end
+	}
+
 	-- Yaml Companion
 	use({
 		"someone-stole-my-name/yaml-companion.nvim",
@@ -274,16 +281,21 @@ packer.startup(function(use)
 	-- })
 
 	-- WIP Avante.nvim - Cursor AI Alternative
+
+	use { 'stevearc/dressing.nvim' }
+	use { 'nvim-lua/plenary.nvim' }
+	use { 'MunifTanjim/nui.nvim' }
+
 	use {
 		'yetone/avante.nvim',
 		run = "make", -- or "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" for Windows
 		requires = {
-			'nvim-treesitter/nvim-treesitter',
-			'stevearc/dressing.nvim',
-			'nvim-lua/plenary.nvim',
-			'MunifTanjim/nui.nvim',
-			'nvim-tree/nvim-web-devicons', -- optional, for file icons
-			'zbirenbaum/copilot.lua',   -- optional, for Copilot integration
+			{ 'nvim-treesitter/nvim-treesitter' },
+			{ 'stevearc/dressing.nvim' },
+			{ 'nvim-lua/plenary.nvim' },
+			{ 'MunifTanjim/nui.nvim' },
+			{ 'nvim-tree/nvim-web-devicons' }, -- optional, for file icons
+			{ 'zbirenbaum/copilot.lua' },   -- optional, for Copilot integration
 			{
 				'HakonHarnes/img-clip.nvim',
 				config = function()

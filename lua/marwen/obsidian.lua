@@ -5,7 +5,7 @@ end
 
 local os = vim.loop.os_uname().sysname
 
-local function get_obsidian_directory()
+local function obsidian_directory()
 	if os == "Darwin" then
 		return "/Users/marwen/Desktop/_workspace/_onixus74/onixus74.md"
 	else
@@ -17,7 +17,7 @@ obsidian.setup({
 	workspaces = {
 		{
 			name = "onixus74_macos",
-			path = get_obsidian_directory(),
+			path = obsidian_directory(),
 		},
 	},
 	new_notes_location = "Inbox",

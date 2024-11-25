@@ -48,6 +48,7 @@ require("marwen.gen")
 require("marwen.avante")
 require("marwen.github-notifications")
 require("marwen.obsidian")
+require("marwen.neovide")
 require("marwen.sqls")
 
 -- UNUSED

@@ -25,6 +25,13 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+
+-- Allow clipboard copy paste
+keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+
 -- Close buffer
 -- keymap("n", "<C-w>", ":Bdelete!<CR>", opts)
 keymap("n", "<C-w>", ":BD<CR>", opts)
@@ -79,6 +86,19 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Terminal --
+-- Exit terminal mode
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+-- keymap("t", "jj", "<C-\\><C-N>", term_opts)
+-- keymap("t", "kk", "<C-\\><C-N>", term_opts)
+-- keymap("t", "jk", "<C-\\><C-N>", term_opts)
+
+-- Better terminal navigation
+keymap("t", "<C-h>", "<Esc><C-w>h", term_opts)
+keymap("t", "<C-j>", "<Esc><C-w>j", term_opts)
+keymap("t", "<C-k>", "<Esc><C-w>k", term_opts)
+keymap("t", "<C-l>", "<Esc><C-w>l", term_opts)
 
 -- Splits
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
