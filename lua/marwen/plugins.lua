@@ -223,12 +223,12 @@ packer.startup(function(use)
 	-- CSV
 	-- use("chrisbra/csv.vim")
 
-	use {
-		'hat0uma/csvview.nvim',
-		config = function()
-			require('csvview').setup()
-		end
-	}
+	-- use {
+	-- 	'hat0uma/csvview.nvim',
+	-- 	config = function()
+	-- 		require('csvview').setup()
+	-- 	end
+	-- }
 
 	-- Yaml Companion
 	use({
