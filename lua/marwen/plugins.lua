@@ -283,7 +283,6 @@ packer.startup(function(use)
 	-- WIP Avante.nvim - Cursor AI Alternative
 
 	use { 'stevearc/dressing.nvim' }
-	use { 'nvim-lua/plenary.nvim' }
 	use { 'MunifTanjim/nui.nvim' }
 
 	use {
