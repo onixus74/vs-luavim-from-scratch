@@ -89,10 +89,11 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Exit terminal mode
+keymap("t", "<leader><Esc>", "<C-\\><C-N>", term_opts)
 -- keymap("t", "<Esc><Esc><Esc>", "<C-\\><C-N>", term_opts)
 -- keymap("t", "jj", "<C-\\><C-N>", term_opts)
 -- keymap("t", "kk", "<C-\\><C-N>", term_opts)
-keymap("t", "jk", "<C-\\><C-N>", term_opts)
+-- keymap("t", "jk", "<C-\\><C-N>", term_opts)
 
 -- Better terminal navigation
 keymap("t", "<C-h>", "<Esc><C-w>h", term_opts)
@@ -264,8 +265,8 @@ keymap("n", "<leader>md", ":Glow<CR>", opts)
 -- keymap("n", "<leader>mdp", ":lua require('knap').toggle_autopreviewing()<CR>", opts)
 
 -- Multi cursor
-vim.cmd([[
-  let g:VM_maps = {}
-  let g:VM_maps['Find Under']         = '<C-i>'
-  let g:VM_maps['Find Subword Under'] = '<C-i>'
-]])
+-- vim.cmd([[
+--   let g:VM_maps = {}
+--   let g:VM_maps['Find Under']         = '<C-i>'
+--   let g:VM_maps['Find Subword Under'] = '<C-i>'
+-- ]])
