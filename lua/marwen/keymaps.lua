@@ -89,9 +89,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Exit terminal mode
-keymap("t", "<Esc>", "<C-\\><C-N>", term_opts)
-keymap("t", "jj", "<C-\\><C-N>", term_opts)
-keymap("t", "kk", "<C-\\><C-N>", term_opts)
+-- keymap("t", "<Esc><Esc><Esc>", "<C-\\><C-N>", term_opts)
+-- keymap("t", "jj", "<C-\\><C-N>", term_opts)
+-- keymap("t", "kk", "<C-\\><C-N>", term_opts)
 keymap("t", "jk", "<C-\\><C-N>", term_opts)
 
 -- Better terminal navigation
