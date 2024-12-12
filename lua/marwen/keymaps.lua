@@ -108,9 +108,6 @@ keymap("n", "<leader>h", ":split<CR>", opts)
 -- NvimTree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
--- LazyGit
-keymap("n", "<leader>gg", ":LazyGit<CR>", opts)
-
 -- Source nvim config
 keymap("n", "<leader>so", ":so %<CR>", opts)
 
@@ -265,8 +262,8 @@ keymap("n", "<leader>md", ":Glow<CR>", opts)
 -- keymap("n", "<leader>mdp", ":lua require('knap').toggle_autopreviewing()<CR>", opts)
 
 -- Multi cursor
--- vim.cmd([[
---   let g:VM_maps = {}
---   let g:VM_maps['Find Under']         = '<C-i>'
---   let g:VM_maps['Find Subword Under'] = '<C-i>'
--- ]])
+vim.cmd([[
+  let g:VM_maps = {}
+  let g:VM_maps['Find Under']         = '<C-i>'
+  let g:VM_maps['Find Subword Under'] = '<C-i>'
+]])

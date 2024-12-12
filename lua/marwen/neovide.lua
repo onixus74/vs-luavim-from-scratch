@@ -1,4 +1,5 @@
 if vim.g.neovide then
+  vim.opt.guifont = "JetBrainsMono Nerd Font:h16"
   -- Allow copy paste
   vim.keymap.set('n', '<D-s>', ':w<CR>')      -- Save
   vim.keymap.set('v', '<D-c>', '"+y')         -- Copy
