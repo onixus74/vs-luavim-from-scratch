@@ -3,9 +3,9 @@ if not status_ok then
 	return
 end
 
-local ops = {
+local opts = {
 	-- model = "llama2",       -- The default model to use.
-	model = "codellama", -- The default model to use.
+	model = "deepseek-r1:14b", -- The default model to use.
 	host = "localhost",
 	port = "11434",
 	display_mode = "split", -- The display mode. Can be "float" or "split".
@@ -28,4 +28,4 @@ local ops = {
 	debug = false, -- Prints errors and the command which is run.
 }
 
-genLLM.setup(ops)
+genLLM.setup(opts)
