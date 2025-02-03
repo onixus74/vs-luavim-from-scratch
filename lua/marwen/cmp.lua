@@ -110,8 +110,8 @@ cmp.setup({
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
-				cmp_tabnine = "[TabNine]",
-				copilot = "[Copilot]",
+				-- cmp_tabnine = "[TabNine]",
+				-- copilot = "[Copilot]",
 				ultisnips = "[UltiSnips]",
 				nvim_lsp = "[LSP]",
 				-- nvim_lsp_signature_help = "[Signature]",

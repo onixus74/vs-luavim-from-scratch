@@ -16,6 +16,7 @@ end
 local servers = {
 	"lua_ls",
 	"html",
+	-- "emmet_language_server",
 	"ts_ls",
 	"jsonls",
 	"yamlls",

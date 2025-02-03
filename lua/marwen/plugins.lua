@@ -252,8 +252,8 @@ packer.startup(function(use)
 	-- })
 
 	-- Tabnine
-	use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
-	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	-- use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
+	-- use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
 	-- Gh Copilot
 	-- use { 'github/copilot.vim' }

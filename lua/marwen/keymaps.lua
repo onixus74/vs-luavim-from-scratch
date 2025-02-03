@@ -264,6 +264,6 @@ keymap("n", "<leader>md", ":Glow<CR>", opts)
 -- Multi cursor
 vim.cmd([[
   let g:VM_maps = {}
-  let g:VM_maps['Find Under']         = '<C-i>'
-  let g:VM_maps['Find Subword Under'] = '<C-i>'
+  let g:VM_maps['Find Under']         = '<C-m>'
+  let g:VM_maps['Find Subword Under'] = '<C-m>'
 ]])
