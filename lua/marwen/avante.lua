@@ -8,9 +8,10 @@ avante.setup({
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | "ollama" | string
   provider = "claude",                  -- Recommend using Claude
   auto_suggestions_provider = "claude", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+  cursor_applying_provider = 'claude',  -- In this example, use Groq for applying, but you can also use any provider you want.
   claude = {
     endpoint = "https://api.anthropic.com",
-    model = "claude-3-5-sonnet-latest",
+    model = "claude-3-7-sonnet-latest",
     temperature = 0,
     max_tokens = 8192,
   },
@@ -22,6 +23,13 @@ avante.setup({
       model = "deepseek-r1:8b",
       temperature = 0,
     },
+    groq = { -- define groq provider
+      __inherited_from = 'openai',
+      api_key_name = 'GROQ_API_KEY',
+      endpoint = 'https://api.groq.com/openai/v1/',
+      model = 'llama-3.3-70b-versatile',
+      max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+    },
   },
   dual_boost = {
     enabled = false,
@@ -32,7 +40,8 @@ avante.setup({
     timeout = 60000, -- Timeout in milliseconds
   },
   behaviour = {
-    auto_suggestions = true, -- Experimental stage
+    auto_suggestions = true,            -- Experimental stage
+    enable_cursor_planning_mode = true, -- enable cursor planning mode!
     auto_set_highlight_group = true,
     auto_set_keymaps = true,
     auto_apply_diff_after_generation = false,
