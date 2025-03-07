@@ -9,6 +9,9 @@ avante.setup({
   provider = "claude",                  -- Recommend using Claude
   auto_suggestions_provider = "claude", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
   cursor_applying_provider = 'claude',  -- In this example, use Groq for applying, but you can also use any provider you want.
+  -- web_search_engine = {
+  --   provider = "searxng",                -- tavily, serpapi, searchapi, google or kagi
+  -- },
   claude = {
     endpoint = "https://api.anthropic.com",
     model = "claude-3-7-sonnet-latest",
