@@ -116,6 +116,18 @@ avante.setup({
     ---@type string | fun(): any
     list_opener = "copen",
   },
+  system_prompt = function()
+    local hub = require("mcphub").get_hub_instance()
+    if hub then
+      return hub:get_active_servers_prompt()
+    end
+    return ""
+  end,
+  custom_tools = function()
+    return {
+      require("mcphub.extensions.avante").mcp_tool(),
+    }
+  end,
 })
 
 require("avante_lib").load()

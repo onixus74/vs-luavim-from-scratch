@@ -280,8 +280,6 @@ packer.startup(function(use)
 	-- 	end,
 	-- })
 
-	-- WIP Avante.nvim - Cursor AI Alternative
-
 	use { 'stevearc/dressing.nvim' }
 	use { 'MunifTanjim/nui.nvim' }
 
@@ -321,6 +319,15 @@ packer.startup(function(use)
 		},
 	}
 	-- END WIP Avante.nvim - Cursor AI Alternative
+
+	-- MCP Hub - Model Context Protocol
+	use({
+		"ravitemer/mcphub.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",             -- Required for Job and HTTP requests
+		},
+		build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
+	})
 
 	-- Ollama LLMs
 	use("David-Kunz/gen.nvim")
