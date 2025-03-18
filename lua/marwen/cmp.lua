@@ -41,7 +41,7 @@ local kind_icons = {
 	TypeParameter = " ",
 	Misc = " ",
 	Copilot = " ",
-	TabNine = " ",
+	-- TabNine = " ",
 }
 
 -- snippy.setup({
@@ -124,7 +124,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "copilot" },
-		{ name = "cmp_tabnine" },
+		-- { name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
 		-- { name = "nvim_lsp_signature_help" },
 		{ name = "ultisnips" },
