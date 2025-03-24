@@ -5,10 +5,10 @@ end
 
 
 avante.setup({
-  ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | "ollama" | string
+  --- @alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | "ollama" | string
   provider = "claude",                  -- Recommend using Claude
   auto_suggestions_provider = "claude", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-  cursor_applying_provider = 'claude',  -- In this example, use Groq for applying, but you can also use any provider you want.
+  cursor_applying_provider = 'groq',    -- In this example, use Groq for applying, but you can also use any provider you want.
   web_search_engine = {
     provider = "tavily",                -- tavily, serpapi, searchapi, google or kagi
   },
@@ -36,20 +36,22 @@ avante.setup({
   },
   dual_boost = {
     enabled = false,
-    first_provider = "openai",
-    second_provider = "ollama_deepseek",
+    first_provider = "groq",
+    second_provider = "claude",
     prompt =
     "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
     timeout = 60000, -- Timeout in milliseconds
   },
   behaviour = {
-    auto_suggestions = true,            -- Experimental stage
-    enable_cursor_planning_mode = true, -- enable cursor planning mode!
+    auto_suggestions = true, -- Experimental stage
     auto_set_highlight_group = true,
     auto_set_keymaps = true,
     auto_apply_diff_after_generation = false,
     support_paste_from_clipboard = false,
-    minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
+    minimize_diff = true,                        -- Whether to remove unchanged lines when applying a code block
+    enable_token_counting = true,                -- Whether to enable token counting. Default to true.
+    enable_cursor_planning_mode = true,          -- Whether to enable Cursor Planning Mode. Default to false.
+    enable_claude_text_editor_tool_mode = false, -- Whether to enable Claude Text Editor Tool Mode.
   },
   mappings = {
     --- @class AvanteConflictMappings
@@ -86,9 +88,13 @@ avante.setup({
     ---@type "right" | "left" | "top" | "bottom"
     position = "right", -- the position of the sidebar
     wrap = true,        -- similar to vim.o.wrap
-    width = 30,         -- default % based on available width
+    width = 50,         -- default % based on available width
+    input = {
+      prefix = "",
+      height = 8, -- Height of the input window in vertical layout
+    },
     sidebar_header = {
-      align = "right",  -- left, center, right for title
+      align = "right", -- left, center, right for title
       rounded = false,
     },
     edit = {
