@@ -16,7 +16,13 @@ avante.setup({
     endpoint = "https://api.anthropic.com",
     model = "claude-3-7-sonnet-latest",
     temperature = 0,
-    max_tokens = 8192,
+    max_tokens = 32768
+  },
+  gemini = {
+    -- endpoint = "https://api.anthropic.com",
+    model = "gemini-2.5-pro-exp-03-25",
+    temperature = 0,
+    max_tokens = 32768
   },
   vendors = {
     ollama_deepseek = {
@@ -136,4 +142,4 @@ avante.setup({
   end,
 })
 
-require("avante_lib").load()
+-- require("avante_lib").load()

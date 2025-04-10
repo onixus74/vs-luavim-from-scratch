@@ -23,6 +23,7 @@ local servers = {
 	"svelte",
 	"eslint",
 	"elixirls",
+	"basedpyright",
 	-- "lexical",
 	"tailwindcss",
 	"dockerls",

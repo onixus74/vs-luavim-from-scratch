@@ -154,10 +154,10 @@ packer.startup(function(use)
 	-- vim-abolish
 
 	-- Multi cursor
-	use("mg979/vim-visual-multi")
+	-- use("mg979/vim-visual-multi")
 
 	-- Elixir Tools
-	use("Matsa59/potion-maker.nvim")
+	-- use("Matsa59/potion-maker.nvim")
 
 	-- Typescript Tools
 	use("SaschaMendel/vim-quicktype")
@@ -280,44 +280,69 @@ packer.startup(function(use)
 	-- 	end,
 	-- })
 
-	use { 'stevearc/dressing.nvim' }
-	use { 'MunifTanjim/nui.nvim' }
 
+	-- Avante
+	-- Required plugins
+	-- use 'nvim-treesitter/nvim-treesitter'
+	use 'stevearc/dressing.nvim'
+	-- use 'nvim-lua/plenary.nvim'
+	use 'MunifTanjim/nui.nvim'
+	use 'MeanderingProgrammer/render-markdown.nvim'
+
+	-- Optional dependencies
+	-- use 'hrsh7th/nvim-cmp'
+	-- use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
+	use 'HakonHarnes/img-clip.nvim'
+	use 'zbirenbaum/copilot.lua'
+
+	-- Avante.nvim with build process
 	use {
 		'yetone/avante.nvim',
-		run = "make", -- or "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" for Windows
-		requires = {
-			{ 'nvim-treesitter/nvim-treesitter' },
-			{ 'stevearc/dressing.nvim' },
-			{ 'nvim-lua/plenary.nvim' },
-			{ 'MunifTanjim/nui.nvim' },
-			{ 'nvim-tree/nvim-web-devicons' }, -- optional, for file icons
-			{ 'zbirenbaum/copilot.lua' },   -- optional, for Copilot integration
-			{
-				'HakonHarnes/img-clip.nvim',
-				config = function()
-					require('img-clip').setup({
-						default = {
-							embed_image_as_base64 = false,
-							prompt_for_file_name = false,
-							use_absolute_path = true, -- required for Windows users
-							drag_and_drop = {
-								insert_mode = true,
-							},
-						},
-					})
-				end,
-			},
-			{
-				'MeanderingProgrammer/render-markdown.nvim',
-				config = function()
-					require('render-markdown').setup({
-						file_types = { "markdown", "Avante" },
-					})
-				end,
-			},
-		},
+		branch = 'main',
+		-- commit = '8c4244b940e89dc42acc7b3b6b801f1767cf6665', -- WORKS
+		-- commit = 'a2aec079c9e430200d687a8f4284afc1db33a497', -- DOESN'T WORK
+
+		run = 'make',
+		-- config = function()
+		-- 	require('avante').setup()
+		-- end
 	}
+
+	-- use {
+	-- 	'yetone/avante.nvim',
+	-- 	run = "make", -- or "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" for Windows
+	-- 	requires = {
+	-- 		{ 'nvim-treesitter/nvim-treesitter' },
+	-- 		{ 'stevearc/dressing.nvim' },
+	-- 		{ 'nvim-lua/plenary.nvim' },
+	-- 		{ 'MunifTanjim/nui.nvim' },
+	-- 		{ 'nvim-tree/nvim-web-devicons' }, -- optional, for file icons
+	-- 		{ 'zbirenbaum/copilot.lua' },   -- optional, for Copilot integration
+	-- 		{
+	-- 			'HakonHarnes/img-clip.nvim',
+	-- 			config = function()
+	-- 				require('img-clip').setup({
+	-- 					default = {
+	-- 						embed_image_as_base64 = false,
+	-- 						prompt_for_file_name = false,
+	-- 						use_absolute_path = true, -- required for Windows users
+	-- 						drag_and_drop = {
+	-- 							insert_mode = true,
+	-- 						},
+	-- 					},
+	-- 				})
+	-- 			end,
+	-- 		},
+	-- 		{
+	-- 			'MeanderingProgrammer/render-markdown.nvim',
+	-- 			config = function()
+	-- 				require('render-markdown').setup({
+	-- 					file_types = { "markdown", "Avante" },
+	-- 				})
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- }
 	-- END WIP Avante.nvim - Cursor AI Alternative
 
 	-- MCP Hub - Model Context Protocol
