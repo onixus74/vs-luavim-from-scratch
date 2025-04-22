@@ -7,6 +7,8 @@ mcphub.setup({
   -- Required options
   port = 3088,                                                     -- Port for MCP Hub server
   config = "/Users/marwen/.dotfiles/.config/nvim/mcpservers.json", -- Path to config file
+  -- This sets vim.g.mcphub_auto_approve to false by default (can also be toggled from the HUB UI with `ga`)
+  auto_approve = true,
 
   -- Optional options
   on_ready = function(hub)
