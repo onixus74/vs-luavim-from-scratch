@@ -299,59 +299,22 @@ packer.startup(function(use)
 	use {
 		'yetone/avante.nvim',
 		branch = 'main',
-		-- commit = '8c4244b940e89dc42acc7b3b6b801f1767cf6665', -- WORKS
-		-- commit = 'a2aec079c9e430200d687a8f4284afc1db33a497', -- DOESN'T WORK
-
 		run = 'make',
-		-- config = function()
-		-- 	require('avante').setup()
-		-- end
 	}
 
-	-- use {
-	-- 	'yetone/avante.nvim',
-	-- 	run = "make", -- or "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" for Windows
-	-- 	requires = {
-	-- 		{ 'nvim-treesitter/nvim-treesitter' },
-	-- 		{ 'stevearc/dressing.nvim' },
-	-- 		{ 'nvim-lua/plenary.nvim' },
-	-- 		{ 'MunifTanjim/nui.nvim' },
-	-- 		{ 'nvim-tree/nvim-web-devicons' }, -- optional, for file icons
-	-- 		{ 'zbirenbaum/copilot.lua' },   -- optional, for Copilot integration
-	-- 		{
-	-- 			'HakonHarnes/img-clip.nvim',
-	-- 			config = function()
-	-- 				require('img-clip').setup({
-	-- 					default = {
-	-- 						embed_image_as_base64 = false,
-	-- 						prompt_for_file_name = false,
-	-- 						use_absolute_path = true, -- required for Windows users
-	-- 						drag_and_drop = {
-	-- 							insert_mode = true,
-	-- 						},
-	-- 					},
-	-- 				})
-	-- 			end,
-	-- 		},
-	-- 		{
-	-- 			'MeanderingProgrammer/render-markdown.nvim',
-	-- 			config = function()
-	-- 				require('render-markdown').setup({
-	-- 					file_types = { "markdown", "Avante" },
-	-- 				})
-	-- 			end,
-	-- 		},
-	-- 	},
-	-- }
-	-- END WIP Avante.nvim - Cursor AI Alternative
 
 	-- MCP Hub - Model Context Protocol
 	use({
 		"ravitemer/mcphub.nvim",
 		requires = {
-			"nvim-lua/plenary.nvim",             -- Required for Job and HTTP requests
+			"nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
 		},
-		build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
+		config = function()
+			require('mcphub').setup({
+				-- This sets vim.g.mcphub_auto_approve to false by default (can also be toggled from the HUB UI with `ga`)
+				auto_approve = true,
+			})
+		end,
 	})
 
 	-- Ollama LLMs

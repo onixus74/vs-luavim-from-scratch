@@ -8,7 +8,7 @@ avante.setup({
   --- @alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | "ollama" | string
   provider = "claude",                  -- Recommend using Claude
   auto_suggestions_provider = "claude", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-  cursor_applying_provider = 'groq',    -- In this example, use Groq for applying, but you can also use any provider you want.
+  cursor_applying_provider = 'claude',  -- In this example, use Groq for applying, but you can also use any provider you want.
   web_search_engine = {
     provider = "tavily",                -- tavily, serpapi, searchapi, google or kagi
   },
@@ -54,10 +54,10 @@ avante.setup({
     auto_set_keymaps = true,
     auto_apply_diff_after_generation = false,
     support_paste_from_clipboard = false,
-    minimize_diff = true,                        -- Whether to remove unchanged lines when applying a code block
-    enable_token_counting = true,                -- Whether to enable token counting. Default to true.
-    enable_cursor_planning_mode = true,          -- Whether to enable Cursor Planning Mode. Default to false.
-    enable_claude_text_editor_tool_mode = false, -- Whether to enable Claude Text Editor Tool Mode.
+    minimize_diff = true,                       -- Whether to remove unchanged lines when applying a code block
+    enable_token_counting = true,               -- Whether to enable token counting. Default to true.
+    enable_cursor_planning_mode = true,         -- Whether to enable Cursor Planning Mode. Default to false.
+    enable_claude_text_editor_tool_mode = true, -- Whether to enable Claude Text Editor Tool Mode.
   },
   mappings = {
     --- @class AvanteConflictMappings
@@ -130,10 +130,7 @@ avante.setup({
   },
   system_prompt = function()
     local hub = require("mcphub").get_hub_instance()
-    if hub then
-      return hub:get_active_servers_prompt()
-    end
-    return ""
+    return hub:get_active_servers_prompt()
   end,
   custom_tools = function()
     return {
@@ -141,5 +138,3 @@ avante.setup({
     }
   end,
 })
-
--- require("avante_lib").load()

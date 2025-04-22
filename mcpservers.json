@@ -1,11 +1,20 @@
 {
   "mcpServers": {
-    "fetch": {
-      "args": [
-        "@kazuph/mcp-fetch"
-      ],
-      "disabled": true,
-      "command": "npx"
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "sequentialthinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    }
+  },
+  "nativeMCPServers": {
+    "mcphub": {
+      "disabled": false
+    },
+    "neovim": {
+      "disabled": false
     }
   }
 }
