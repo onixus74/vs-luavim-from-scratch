@@ -1,19 +1,37 @@
 {
   "mcpServers": {
     "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@latest"]
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "command": "npx"
+    },
+    "tidewave": {
+      "disabled": false,
+      "url": "http://localhost:4000/tidewave/mcp"
     },
     "sequentialthinking": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "command": "npx"
+    },
+    "taskmaster-ai": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+      "args": [
+        "-y",
+        "--package=task-master-ai",
+        "task-master-ai"
+      ]
     }
   },
   "nativeMCPServers": {
-    "mcphub": {
+    "neovim": {
       "disabled": false
     },
-    "neovim": {
+    "mcphub": {
       "disabled": false
     }
   }

@@ -63,6 +63,9 @@ packer.startup(function(use)
 	-- Colorschemes
 	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
 	use("navarasu/onedark.nvim")
+	use("folke/tokyonight.nvim")
+	use 'wilmanbarrios/palenight.nvim'
+
 
 	-- Colorizer
 	use("norcalli/nvim-colorizer.lua")
@@ -295,10 +298,20 @@ packer.startup(function(use)
 	use 'HakonHarnes/img-clip.nvim'
 	use 'zbirenbaum/copilot.lua'
 
-	-- Avante.nvim with build process
+	-- Avante.nvim
 	use {
 		'yetone/avante.nvim',
 		branch = 'main',
+
+		-- 250430
+		-- commit = 'cee31ebb7f0498f526089b94aff0bb832417fc75',
+
+		-- 250429
+		-- commit = 'f9aa75459d403d9e963ef2647c9791e0dfc9e5f9',
+
+		-- 250424
+		-- commit = 'f9aa75459d403d9e963ef2647c9791e0dfc9e5f9',
+
 		run = 'make',
 	}
 
