@@ -22,7 +22,7 @@ local servers = {
 	"yamlls",
 	"svelte",
 	"eslint",
-	"elixirls",
+	"elixir-ls",
 	"basedpyright",
 	-- "lexical",
 	"tailwindcss",
@@ -60,10 +60,6 @@ local settings = {
 }
 
 mason.setup(settings)
-mason_config.setup({
-	ensure_installed = servers,
-	automatic_installation = true,
-})
 
 local opts = {}
 
